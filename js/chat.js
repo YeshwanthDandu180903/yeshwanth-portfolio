@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isExpanded = false;
 
     // --- API Endpoint ---
-    const API_URL = 'http://localhost:5000/api/chat';
+    const API_URL = 'https://rag-backend.onrender.com/chat';
 
     // --- Functions ---
 
