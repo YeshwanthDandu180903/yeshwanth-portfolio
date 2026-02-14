@@ -1,0 +1,34 @@
+# General
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+api.txt
+
+portfolio/
+# IDE settings
+.vscode/
+.idea/
+
+# Secret and Config files
+api.txt
+secrets.json
+config.py
+
+# Project specific
+portfolio/
+faiss_index/
+pdf_content.txt
+
+# Logs
+*.log
