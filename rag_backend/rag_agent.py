@@ -17,8 +17,16 @@ class PortfolioAgent:
         self.client = Groq(api_key=self.api_key)
         self.system_prompt = self._load_system_prompt()
         
-        # Load Vector Store
-        print("Loading vector store...")
+        # Initialize as None for lazy loading
+        self.embeddings = None
+        self.vector_store = None
+        print("Agent initialized. Resources will be loaded on first request.")
+
+    def _lazy_load(self):
+        if self.vector_store is not None:
+            return
+
+        print("Lazy loading vector store...")
         try:
             self.embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
             # Allow dangerous deserialization because we created the index ourselves locally
@@ -36,6 +44,9 @@ class PortfolioAgent:
             return "You are a helpful assistant for Yeshwanth's portfolio."
 
     def get_response(self, user_query):
+        # Ensure resources are loaded
+        self._lazy_load()
+        
         # Reload prompt for development agility
         self.system_prompt = self._load_system_prompt()
         
