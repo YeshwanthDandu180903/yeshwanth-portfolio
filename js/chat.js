@@ -13,7 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let isExpanded = false;
 
     // --- API Endpoint ---
-    const API_URL = 'https://yeshwanth-portfolio-rag-backend.onrender.com/chat';
+    // Use the helper from config.js to get the full /chat endpoint
+    // Default fallback to localhost if config is missing (safety)
+    const API_URL = (typeof getApiUrl === 'function')
+        ? getApiUrl('/chat')
+        : 'http://127.0.0.1:8000/chat';
 
     // --- Functions ---
 

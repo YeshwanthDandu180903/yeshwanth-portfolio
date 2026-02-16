@@ -33,6 +33,11 @@
             <a class="navbar-brand" href="#hero">
                 <span class="brand-text">YD<span class="accent-dot">.</span></span>
             </a>
+            <!-- Theme Toggle (visible on mobile) -->
+            <button id="theme-toggle-mobile" class="btn btn-link nav-link p-0 ms-auto me-3 d-lg-none"
+                aria-label="Toggle theme">
+                <i class="fas fa-moon" id="theme-icon-mobile"></i>
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,9 +50,35 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-accent btn-sm" href="assets/resume.pdf"
-                            target="_blank">Resume <i class="fas fa-download ms-1"></i></a></li>
-                    <li class="nav-item ms-lg-3 d-flex align-items-center">
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle btn btn-outline-accent btn-sm px-3" href="#"
+                            id="resumeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resumes <i class="fas fa-download ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end glass-card border-0 shadow-lg mt-2"
+                            aria-labelledby="resumeDropdown"
+                            style="background: var(--card-bg); backdrop-filter: blur(16px);">
+                            <li>
+                                <a class="dropdown-item text-muted-light py-2"
+                                    href="assets/software_engineering_resume.pdf" target="_blank">
+                                    <i class="fas fa-code me-2 accent-color"></i> Software Engineering
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-muted-light py-2" href="assets/data_scientist_resume.pdf"
+                                    target="_blank">
+                                    <i class="fas fa-brain me-2 accent-color"></i> Data Scientist / AI
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-muted-light py-2" href="assets/data_analyst_resume.pdf"
+                                    target="_blank">
+                                    <i class="fas fa-chart-bar me-2 accent-color"></i> Data Analyst
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-flex align-items-center">
                         <button id="theme-toggle" class="btn btn-link nav-link p-0" aria-label="Toggle theme">
                             <i class="fas fa-moon" id="theme-icon"></i>
                         </button>
@@ -86,7 +117,7 @@
             </div>
 
             <!-- Code Snippet -->
-            <div class="col-lg-6 mx-auto mt-4 d-none d-lg-block">
+            <div class="col-lg-6 mx-auto mt-4 px-3">
                 <div class="code-window glass-card text-start">
                     <div
                         class="window-header d-flex align-items-center p-2 border-bottom border-secondary border-opacity-25">
@@ -149,7 +180,7 @@
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="stat-box" data-count="2">
+                                <div class="stat-box" data-count="1">
                                     <h4 class="accent-color display-5 fw-bold counter-value">0</h4>
                                     <p class="small mb-0 text-uppercase ls-1">Kaggle Datasets</p>
                                 </div>
@@ -209,6 +240,97 @@
         </div>
     </section>
 
+    <!-- LinkedIn Content Section -->
+    <section id="linkedin-updates" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <span class="badge-subtitle">Insights</span>
+                <h2 class="fw-bold">Latest Updates</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <!-- Hardcoded Content Display -->
+            <div id="linkedin-content-display" class="fade-in-section">
+                <div class="row g-4">
+                    <!-- Top Featured Post -->
+                    <div class="col-lg-5">
+                        <div
+                            class="glass-card p-4 h-100 position-relative overflow-hidden featured-post-card d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                                <div class="badge bg-accent">Featured Post</div>
+                                <small class="text-muted-light">Dec 2024</small>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">Networking at T-Hub</h3>
+                            <p class="text-muted-light mb-4 flex-grow-1">
+                                Connecting with industry leaders at T-Hub Hyderabad. Engaging in deep discussions on
+                                Data Analysis, sharing insights, and building the future of tech networks.
+                            </p>
+                            <a href="https://www.linkedin.com/posts/yeshwanthdandu_dataanalysis-thubhyderabad-networking-activity-7268920008246718464-NmaL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                target="_blank" class="btn btn-sm btn-outline-accent stretched-link mt-auto">
+                                View Post <i class="fab fa-linkedin ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts -->
+                    <div class="col-lg-7">
+                        <h4 class="h5 fw-bold mb-3 px-2">Recent Posts</h4>
+                        <div class="row g-3">
+                            <!-- Post 1: ML/DS/MLOps -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">ML & MLOps Ecosystem</h5>
+                                    </div>
+                                    <small class="text-muted-accent d-block mb-2">January 2026</small>
+                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                        Exploring the synergy between Data Science and MLOps for scalable AI.
+                                    </p>
+                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_machinelearning-datascience-mlops-ugcPost-7421424452342771712-FDWC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                        target="_blank"
+                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
+                                        &rarr;</a>
+                                </div>
+                            </div>
+                            <!-- Post 2: Oracle GenAI -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">Oracle GenAI 2025</h5>
+                                    </div>
+                                    <small class="text-muted-accent d-block mb-2">December 2025</small>
+                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                        Certified in Oracle Cloud Infrastructure GenAI. Mastering LLMs & Agents.
+                                    </p>
+                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_2025journey-oracle-generativeai-ugcPost-7413619654176436225-XbiY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                        target="_blank"
+                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
+                                        &rarr;</a>
+                                </div>
+                            </div>
+                            <!-- Post 3: Healthcare AI -->
+                            <div class="col-md-6 col-lg-4">
+                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                    <div class="d-flex justify-content-between align-items-start mb-2">
+                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">Healthcare AI</h5>
+                                    </div>
+                                    <small class="text-muted-accent d-block mb-2">December 2025</small>
+                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                        Revolutionizing medical imaging with Deep Learning for tumor diagnosis.
+                                    </p>
+                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_healthcareai-deeplearning-medicalimaging-ugcPost-7413601301118300161-TbWQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                        target="_blank"
+                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
+                                        &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section (Timeline) -->
     <section id="experience" class="section-padding bg-darker">
         <div class="container">
@@ -256,7 +378,7 @@
                         <!-- Item 1: B.Tech -->
                         <div class="timeline-item left">
                             <div class="timeline-content glass-card p-4">
-                                <span class="date badge bg-accent mb-2">2022 – Present</span>
+                                <span class="date badge bg-accent mb-2">2023 – Present</span>
                                 <h4 class="h5 fw-bold">B.Tech in CSE (Data Science)</h4>
                                 <h5 class="h6 text-muted-accent mb-3">Institute of Aeronautical Engineering</h5>
                                 <p class="small mb-0 text-muted-light">Expected Graduation: May 2026. CGPA: 7.93/10.
@@ -505,6 +627,71 @@
                 <a href="https://github.com/YeshwanthDandu180903" target="_blank" class="btn btn-outline-accent">View
                     All
                     Projects <i class="fab fa-github ms-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center mb-5">
+                <span class="badge-subtitle">Credentials</span>
+                <h2 class="fw-bold">Certifications</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Cert 1: Oracle AI Vector Search -->
+                <!-- Cert 1: Oracle AI Vector Search -->
+                <div class="col-md-5 col-lg-4">
+                    <a href="https://drive.google.com/file/d/1Fu1UMyPMP2wOBhkEtn_nBiwE7lX-qkBh/view?usp=drive_link"
+                        target="_blank" class="text-decoration-none">
+                        <div
+                            class="text-center p-4 h-100 glass-card certificate-card position-relative overflow-hidden">
+                            <div class="mb-3">
+                                <!-- Oracle Logo / Red Icon -->
+                                <i class="fas fa-database fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold mb-2 text-white">Oracle AI Vector Search Professional</h6>
+                            <p class="small text-muted-light mb-2">1Z0-184-25</p>
+                            <span class="badge bg-glass text-muted-light rounded-pill px-3 py-1">Professional</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Cert 2: Oracle GenAI Professional -->
+                <div class="col-md-5 col-lg-4">
+                    <a href="https://drive.google.com/file/d/170ogGPnomGs2fo4yLT76azoDPmRy9bsx/view?usp=drive_link"
+                        target="_blank" class="text-decoration-none">
+                        <div
+                            class="text-center p-4 h-100 glass-card certificate-card position-relative overflow-hidden">
+                            <div class="mb-3">
+                                <!-- Oracle Cloud Icon -->
+                                <i class="fas fa-cloud fa-3x text-danger"></i>
+                            </div>
+                            <h6 class="fw-bold mb-2 text-white">Oracle Cloud Infrastructure 2025</h6>
+                            <p class="small text-muted-light mb-2">Generative AI Professional</p>
+                            <span class="badge bg-glass text-muted-light rounded-pill px-3 py-1">Professional</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Cert 3: LLM Engineering -->
+                <div class="col-md-5 col-lg-4">
+                    <a href="https://drive.google.com/file/d/1QagQXKsjhwM87KXB1rgrnf1sEMeHe5_E/view?usp=drive_link"
+                        target="_blank" class="text-decoration-none">
+                        <div
+                            class="text-center p-4 h-100 glass-card certificate-card position-relative overflow-hidden">
+                            <div class="mb-3">
+                                <!-- Brain/Robot Icon for AI -->
+                                <i class="fas fa-robot fa-3x" style="color: #A435F0;"></i>
+                            </div>
+                            <h6 class="fw-bold mb-2 text-white">LLM Engineering: Master AI, LLMs & Agents</h6>
+                            <p class="small text-muted-light mb-2">Udemy</p>
+                            <span class="badge bg-glass text-muted-light rounded-pill px-3 py-1">Certificate</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -862,6 +1049,21 @@
         </div>
     </footer>
 
+    <!-- LinkedIn Promo Banner -->
+    <div id="linkedin-promo-banner" class="linkedin-banner">
+        <div class="banner-content">
+            <button id="banner-close" class="banner-close">&times;</button>
+            <div class="banner-icon">
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="banner-text">
+                <h6>Fresh LinkedIn Insights! 🚀</h6>
+                <p>Check out my latest LinkedIn analysis.</p>
+                <a href="#linkedin-updates" class="banner-btn">View Latest Post &rarr;</a>
+            </div>
+        </div>
+    </div>
+
     <!-- RAG Chat Widget -->
     <div class="chat-widget">
         <!-- Chat Toggle Button -->
@@ -916,6 +1118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/main.js"></script>
     <script src="js/chat.js"></script>
 </body>

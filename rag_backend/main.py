@@ -63,3 +63,15 @@ async def chat(request: ChatRequest):
     except Exception as e:
         print(f"Error during chat: {e}")
         return {"response": f"I'm encountering an error: {str(e)}"}
+
+@app.get("/linkedin_posts")
+async def linkedin_posts():
+    if not agent:
+        return {"error": "Error: RAG Agent is not active."}
+    
+    try:
+        response = agent.generate_linkedin_content()
+        return {"content": response}
+    except Exception as e:
+        print(f"Error generating LinkedIn content: {e}")
+        return {"error": f"Error: {str(e)}"}

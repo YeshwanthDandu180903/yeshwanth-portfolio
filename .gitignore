@@ -13,9 +13,7 @@ Desktop.ini
 env/
 venv/
 ENV/
-api.txt
 
-portfolio/
 # IDE settings
 .vscode/
 .idea/
@@ -25,10 +23,15 @@ api.txt
 secrets.json
 config.py
 
-# Project specific
+# Project specific - DO NOT PUSH
 portfolio/
+_archive/
+data/
+scripts/
 faiss_index/
-pdf_content.txt
 
-# Logs
+# Temporary files
 *.log
+temp_*.html
+temp_*.css
+fix_*.py
