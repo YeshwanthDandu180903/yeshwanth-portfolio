@@ -1,5 +1,7 @@
 # Yeshwanth Dandu | Next-Gen Data Science Portfolio 🚀
 
+![Portfolio Preview](images/portfolio_home.png)
+
 Welcome to my **Next-Gen Portfolio**! This isn't just a static website—it's an **intelligent, AI-powered application** that demonstrates my expertise in **Data Science, Machine Learning, and Generative AI**.
 
 At its core lives a custom-built **RAG (Retrieval-Augmented Generation)** Chatbot capable of answering questions about my experience, projects, and skills in real-time.
@@ -29,12 +31,12 @@ The system follows a modern **Client-Server-AI** architecture, ensuring low late
 
 ```mermaid
 graph TD
-    User([User / Recruiter]) <-->|Interacts via Chat| Frontend[Frontend (Vercel)]
-    Frontend <-->|HTTPS API Calls| Backend[Backend API (Hugging Face)]
+    User(["User / Recruiter"]) <-->|Interacts via Chat| Frontend["Frontend (Vercel)"]
+    Frontend <-->|HTTPS API Calls| Backend["Backend API (Hugging Face)"]
     
     subgraph "AI Brain (RAG System)"
-        Backend -->|Query| VectorDB[(FAISS Vector DB)]
-        VectorDB -->|Retrieved Context| LLM[Llama-3 (Groq API)]
+        Backend -->|Query| VectorDB[("FAISS Vector DB")]
+        VectorDB -->|Retrieved Context| LLM["Llama-3 (Groq API)"]
         LLM -->|Generated Answer| Backend
     end
 ```
