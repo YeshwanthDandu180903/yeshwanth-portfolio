@@ -11,7 +11,7 @@ WORKDIR /app
 RUN useradd -m -u 1000 user
 USER user
 ENV HOME=/home/user \
-	PATH=/home/user/.local/bin:$PATH
+    PATH=/home/user/.local/bin:$PATH
 
 WORKDIR $HOME/app
 
@@ -22,11 +22,9 @@ COPY --chown=user requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy the backend code
+# Copy the backend code (includes faiss_index inside rag_backend/)
 COPY --chown=user rag_backend ./rag_backend
 
-# Copy the data folder (if needed at runtime, though FAISS index is already built)
-COPY --chown=user data ./data
 
 # Expose the port used by Hugging Face Spaces
 EXPOSE 7860
