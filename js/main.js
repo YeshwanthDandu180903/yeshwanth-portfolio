@@ -304,6 +304,13 @@ function typeEffect() {
 
 function handleScroll() {
 
+    const aboutSection = document.getElementById('about');
+    const brandMinimal = document.querySelector('.brand-minimal');
+    const brandFull = document.querySelector('.brand-full');
+
+    // Get the position of the About section
+    const aboutPosition = aboutSection ? aboutSection.offsetTop : 600;
+
     if (window.scrollY > 50) {
 
         navbar.classList.add('navbar-scrolled');
@@ -312,6 +319,18 @@ function handleScroll() {
 
         navbar.classList.remove('navbar-scrolled');
 
+    }
+
+    // Toggle brand versions based on scroll position
+    // Show full name + photo when scrolled to About section or beyond
+    if (window.scrollY >= aboutPosition - 100) {
+        brandMinimal.classList.add('d-none');
+        brandFull.classList.remove('d-none');
+        brandFull.classList.add('d-flex');
+    } else {
+        brandMinimal.classList.remove('d-none');
+        brandFull.classList.add('d-none');
+        brandFull.classList.remove('d-flex');
     }
 
 }
@@ -558,11 +577,11 @@ function updateThemeIcon(theme) {
 
             icon.classList.remove('fa-moon');
 
-            icon.classList.add('fa-sun');
+            icon.classList.add('fa-cloud-sun');
 
         } else {
 
-            icon.classList.remove('fa-sun');
+            icon.classList.remove('fa-cloud-sun');
 
             icon.classList.add('fa-moon');
 
@@ -992,3 +1011,125 @@ function initPromoBanner() {
         });
     }
 }
+
+
+
+/* Interactive Animated Curved Timeline */
+function initAnimatedTimeline() {
+    const timelines = document.querySelectorAll('.timeline');
+
+    timelines.forEach(timeline => {
+        const existingSvg = timeline.querySelector('.timeline-svg');
+        if (existingSvg) existingSvg.remove();
+
+        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        svg.classList.add('timeline-svg');
+
+        const resizeObserver = new ResizeObserver(() => {
+            drawTimelinePath(timeline, svg);
+        });
+        resizeObserver.observe(timeline);
+
+        timeline.insertBefore(svg, timeline.firstChild);
+        drawTimelinePath(timeline, svg);
+
+        window.addEventListener('scroll', () => {
+            animateTimeline(timeline, svg);
+        }, { passive: true });
+
+        animateTimeline(timeline, svg);
+    });
+}
+
+function drawTimelinePath(timeline, svg) {
+    const items = timeline.querySelectorAll('.timeline-item');
+    if (items.length === 0) return;
+
+    const width = timeline.offsetWidth;
+    const height = timeline.offsetHeight;
+
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+    // Adjust curve based on width
+    const centerX = width / 2;
+    const dotOffset = 30;
+    const points = [];
+
+    items.forEach((item) => {
+        const dotY = item.offsetTop + 28;
+        let x;
+        if (window.innerWidth <= 768) {
+            x = 28;
+        } else {
+            x = item.classList.contains('left') ? centerX - dotOffset : centerX + dotOffset;
+        }
+        points.push({ x, y: dotY });
+    });
+
+    if (points.length < 2) return;
+
+    let pathD = `M ${points[0].x} ${points[0].y}`;
+    for (let i = 0; i < points.length - 1; i++) {
+        const p1 = points[i];
+        const p2 = points[i + 1];
+        const midY = (p1.y + p2.y) / 2;
+        pathD += ` C ${p1.x} ${midY}, ${p2.x} ${midY}, ${p2.x} ${p2.y}`;
+    }
+    pathD += ` L ${points[points.length - 1].x} ${height}`;
+
+    let path = svg.querySelector('.timeline-path');
+    if (!path) {
+        path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.classList.add('timeline-path');
+        // Initial style to hide
+        path.style.strokeDasharray = '10000';
+        path.style.strokeDashoffset = '10000';
+        svg.appendChild(path);
+    }
+
+    path.setAttribute('d', pathD);
+
+    // Update length for animation
+    const length = path.getTotalLength();
+    svg.dataset.length = length;
+    path.style.strokeDasharray = length;
+
+    // Trigger animation update immediately
+    animateTimeline(timeline, svg);
+}
+
+function animateTimeline(timeline, svg) {
+    const path = svg.querySelector('.timeline-path');
+    if (!path) return;
+
+    const length = parseFloat(svg.dataset.length);
+    if (!length) return;
+
+    const rect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Draw point: usually 75% down screen
+    const drawPoint = windowHeight * 0.75;
+
+    // Calculate visible length relative to timeline top
+    // As we scroll down, rect.top becomes negative
+    // visible = how much of timeline is above the drawPoint
+    let visibleLength = -rect.top + drawPoint;
+
+    if (visibleLength < 0) visibleLength = 0;
+    if (visibleLength > length) visibleLength = length;
+
+    // Use requestAnimationFrame for smooth update
+    requestAnimationFrame(() => {
+        path.style.strokeDashoffset = length - visibleLength;
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimatedTimeline);
+} else {
+    initAnimatedTimeline();
+}
+

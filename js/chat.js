@@ -48,14 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
         isExpanded = !isExpanded;
         chatWindow.classList.toggle('expanded');
 
+        // Get LinkedIn banner
+        const linkedinBanner = document.getElementById('linkedin-promo-banner');
+
         // Update icon
         const icon = expandBtn.querySelector('i');
         if (isExpanded) {
             icon.classList.remove('fa-expand-alt');
             icon.classList.add('fa-compress-alt');
+
+            // Hide LinkedIn banner when chatbot is expanded
+            if (linkedinBanner) {
+                linkedinBanner.style.display = 'none';
+            }
         } else {
             icon.classList.remove('fa-compress-alt');
             icon.classList.add('fa-expand-alt');
+
+            // Show LinkedIn banner when chatbot is minimized
+            if (linkedinBanner && linkedinBanner.classList.contains('visible')) {
+                linkedinBanner.style.display = 'flex';
+            }
         }
     }
 
