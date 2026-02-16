@@ -10,7 +10,7 @@ At its core lives a custom-built **RAG (Retrieval-Augmented Generation)** Chatbo
 
 ## 🌟 Live Demo
 
-- **Frontend (Portfolio)**: [Interactive Experience on Vercel](https://yeshwanth-portfolio.vercel.app)
+- **Frontend (Portfolio)**: [Interactive Experience on Vercel](https://dandu-yeshwanth-portfolio.vercel.app)
 - **Backend (AI Brain)**: [Powered by Hugging Face Spaces](https://huggingface.co/spaces/yeshu1809/portfolio-backend)
 
 ---
