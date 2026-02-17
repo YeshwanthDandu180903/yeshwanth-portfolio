@@ -101,7 +101,7 @@ class PortfolioAgent:
                         "content": "Generate the LinkedIn content previews now.",
                     }
                 ],
-                model="llama-3.1-8b-instant",
+                model="llama-3.3-8b",
                 temperature=0.5,
                 max_tokens=512,
             )
@@ -139,14 +139,22 @@ class PortfolioAgent:
         
         Using the above context (if relevant) and your general knowledge, answer the question.
         
-        CRITICAL: 
-        1. DO NOT USE MARKDOWN BOLDING (**text**). 
-        2. DO NOT USE MARKDOWN HEADERS (# Header).
-        3. Use simple hyphens (-) for lists.
-        4. Keep it clean and readable as plain text.
+        CRITICAL TOKEN-SAVING RULES:
+        1. BE EXTREMELY CONCISE. Aim for 1-2 sentences max.
+        2. NO LISTS unless absolutely necessary.
+        3. DIRECT ANSWER ONLY.
+        4. STOP generating as soon as the answer is complete.
+        5. NO MARKDOWN BOLD/ITALICS. Use double quotes (" ") for highlighting.
+        
+        NEGATIVE CONSTRAINTS (STRICT):
+        - DO NOT add a "Skills" section unless the user asks for skills OR role fitness OR project details (mentioning tech stack is required for projects).
+        - DO NOT list "Projects" unless the user asks for projects OR asks about role fitness. If asking about role fitness, you MUST mention relevant project names.
+        - DO NOT repeat the answer in bullet points if you already wrote a sentence.
+        - IF THE QUESTION IS ABOUT A DATE, PROVIDE THE DATE ONLY.
         """
 
         try:
+            print(f"Generating response using model: llama-3.1-8b-instant w/ temp: 0.5")  # Log model usage
             chat_completion = self.client.chat.completions.create(
                 messages=[
                     {
@@ -158,10 +166,16 @@ class PortfolioAgent:
                         "content": user_query,
                     }
                 ],
-                model="llama-3.1-8b-instant", # Updated to the valid 8B model
+                model="llama-3.1-8b-instant", # Using the valid 8B model
                 temperature=0.5,
                 max_tokens=256,
             )
+            # Log Token Usage
+            usage = chat_completion.usage
+            if usage:
+                print(f"Token Usage -> Prompt: {usage.prompt_tokens}, Completion: {usage.completion_tokens}, Total: {usage.total_tokens}")
+            
+            print("Response generated successfully.")  # Confirm success
             return chat_completion.choices[0].message.content
         except Exception as e:
             return f"Error interacting with the AI: {str(e)}"

@@ -980,34 +980,70 @@ document.addEventListener('DOMContentLoaded', () => {
 function initPromoBanner() {
     const banner = document.getElementById('linkedin-promo-banner');
     const closeBtn = document.getElementById('banner-close');
-    const bannerBtn = document.querySelector('.banner-btn');
 
     if (!banner) return;
 
-    // Show banner after 1.5 seconds
-    setTimeout(() => {
-        banner.classList.add('visible'); // Trigger CSS transition
-        banner.style.opacity = '1';
-        banner.style.transform = 'translateY(0)';
-    }, 1500);
+    // Sections to Monitor
+    const showSections = ['hero', 'about', 'contact'];
+    const hideSections = ['experience', 'education', 'projects', 'skills'];
+    const allSections = [...showSections, ...hideSections];
 
-    // Close Handler
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
+    // Visibility State
+    const visibleIds = new Set();
+
+    const checkVisibility = () => {
+        // If any Hide Section is visible, HIDE the banner (Priority)
+        const shouldHide = hideSections.some(id => visibleIds.has(id));
+
+        if (shouldHide) {
             banner.classList.remove('visible');
             banner.style.opacity = '0';
             banner.style.transform = 'translateY(100px)';
-        });
-    }
-
-    // Smooth Scroll Handler (Optional if not handled by CSS scroll-behavior)
-    if (bannerBtn) {
-        bannerBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.getElementById('linkedin-updates');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Otherwise, if a Show Section is visible, SHOW it
+            const shouldShow = showSections.some(id => visibleIds.has(id));
+            if (shouldShow) {
+                banner.classList.add('visible');
+                banner.style.opacity = '1';
+                banner.style.transform = 'translateY(0)';
             }
+        }
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                visibleIds.add(entry.target.id);
+            } else {
+                visibleIds.delete(entry.target.id);
+            }
+        });
+        checkVisibility();
+    }, { threshold: 0.1 }); // React when 10% valid
+
+    allSections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+
+    // Initial check (in case loaded in middle of page)
+    // We delay slightly to let layout settle
+    setTimeout(() => {
+        if (window.scrollY < 100) {
+            // Force show if at very top and observer hasn't fired yet
+            banner.classList.add('visible');
+            banner.style.opacity = '1';
+            banner.style.transform = 'translateY(0)';
+        }
+    }, 1000);
+
+
+    // Close Handler
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            banner.style.display = 'none';
+            observer.disconnect();
         });
     }
 }

@@ -502,58 +502,22 @@ a:hover {
 
 
 
-.nav-link::after {
-
-
-
+.nav-link:not(.btn)::after {
     content: '';
-
-
-
     position: absolute;
-
-
-
     width: 0;
-
-
-
     height: 2px;
-
-
-
-    bottom: 0;
-
-
-
-    left: 0;
-
-
-
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--accent-color);
-
-
-
-    transition: width var(--transition-speed) ease;
-
-
-
+    transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
-
-
-
-
-
-
-.nav-link:hover::after {
-
-
-
-    width: 100%;
-
-
-
+.nav-link:not(.btn):hover::after,
+.nav-link.active:not(.btn)::after {
+    width: 20px;
 }
 
 
@@ -4358,7 +4322,8 @@ box-shadow: 0 0 10px var(--accent-glow);
 
 
 
-    min-height: 160px;
+    height: 340px;
+    overflow-y: hidden;
 
 
 
@@ -5261,7 +5226,8 @@ box-shadow: 0 0 10px var(--accent-glow);
 /* LinkedIn Promo Banner - Header Position */
 .linkedin-banner {
     position: fixed;
-    top: 100px;
+    top: 140px;
+    /* Moved down to avoid badge overlap */
     /* Below navbar */
     right: 25px;
     bottom: auto;
@@ -5392,20 +5358,20 @@ box-shadow: 0 0 10px var(--accent-glow);
     color: #ff5f56;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
     .linkedin-banner {
-        top: 80px;
-        /* navbar height + margin */
-        right: 50%;
-        left: auto;
-        bottom: auto;
-        transform: translateX(50%) translateY(-20px);
-        max-width: none;
+        top: 160px !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: 10px !important;
+        transform: translateX(0) translateY(0);
+        max-width: 200px;
+        /* Limit width */
         width: auto;
     }
 
     .linkedin-banner.visible {
-        transform: translateX(50%) translateY(0);
+        transform: translateX(0) translateY(0);
     }
 }
 

@@ -22,6 +22,7 @@ ENV/
 api.txt
 secrets.json
 config.py
+api_new.txt
 
 # Project specific - DO NOT PUSH
 portfolio/
@@ -29,6 +30,7 @@ _archive/
 data/
 scripts/
 faiss_index/
+!rag_backend_new/faiss_index/
 
 # Temporary files
 *.log
