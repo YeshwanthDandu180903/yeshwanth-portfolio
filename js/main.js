@@ -853,13 +853,10 @@ async function fetchLinkedInPosts() {
 
     if (!displayElement || !loaderElement) return;
 
-    // determine API URL
-
-    // For local dev, use localhost. If on production, use the relative path or configured URL.
-
-    // We'll default to localhost for this user session as per context.
-
-    const API_URL = 'http://127.0.0.1:8000/linkedin_posts';
+    // Use the helper from config.js to get the full /linkedin_posts endpoint
+    const API_URL = (typeof getApiUrl === 'function')
+        ? getApiUrl('/linkedin_posts')
+        : 'http://127.0.0.1:8000/linkedin_posts';
 
     try {
 
