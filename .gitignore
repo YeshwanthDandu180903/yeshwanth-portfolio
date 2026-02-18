@@ -32,13 +32,18 @@ scripts/
 faiss_index/
 !rag_backend_new/faiss_index/
 
-# Temporary files
-*.log
-temp_*.html
-temp_*.css
-fix_*.py
+
 rag_backend/
 DEPLOYMENT.md
 animation_config.md
 SECURITY.md
 GIT_PUSH_GUIDE.md
+
+
+# Temporary files
+*.log
+temp_*.html
+temp_*.css
+fix_*.py
+
+
