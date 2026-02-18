@@ -37,3 +37,8 @@ faiss_index/
 temp_*.html
 temp_*.css
 fix_*.py
+rag_backend/
+DEPLOYMENT.md
+animation_config.md
+SECURITY.md
+GIT_PUSH_GUIDE.md

@@ -1,6 +1,6 @@
 # Yeshwanth Dandu | Next-Gen Data Science Portfolio 🚀
 
-![Portfolio Preview](images/portfolio_home.png)
+![Portfolio Preview](images/portfolio_v1.png)
 
 Welcome to my **Next-Gen Portfolio**! This isn't just a static website—it's an **intelligent, AI-powered application** that demonstrates my expertise in **Data Science, Machine Learning, and Generative AI**.
 
@@ -10,7 +10,7 @@ At its core lives a custom-built **RAG (Retrieval-Augmented Generation)** Chatbo
 
 ## 🌟 Live Demo
 
-- **Frontend (Portfolio)**: [Interactive Experience on Vercel](https://dandu-yeshwanth18-portfolio.vercel.app)
+- **Frontend (Portfolio)**: [Interactive Experience on Vercel](https://dandu-yeshwanth1809-portfolio.vercel.app)
 - **Backend (AI Brain)**: [Powered by Hugging Face Spaces](https://huggingface.co/spaces/yeshu1809/portfolio-backend)
 
 ---
