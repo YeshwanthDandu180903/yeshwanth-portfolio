@@ -39,7 +39,7 @@ animation_config.md
 SECURITY.md
 GIT_PUSH_GUIDE.md
 
-
+HUGGINGFACE_UPLOAD.md
 # Temporary files
 *.log
 temp_*.html
