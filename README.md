@@ -36,7 +36,7 @@ graph TD
     
     subgraph "AI Brain (RAG System)"
         Backend -->|Query| VectorDB[("FAISS Vector DB")]
-        VectorDB -->|Retrieved Context| LLM["Llama-3 (Groq API)"]
+        VectorDB -->|Retrieved Context| LLM["Llama-3.1 (Groq API)"]
         LLM -->|Generated Answer| Backend
     end
 ```
