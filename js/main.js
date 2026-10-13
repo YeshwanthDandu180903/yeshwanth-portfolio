@@ -248,7 +248,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // Typing Animation
 
-const words = ["a Problem Solver", "a Data Analyst", "an Aspiring Data Scientist", "Aspiring for GenAI roles"];
+const words = ["building RAG Systems", "developing ML Pipelines", "engineering AI Solutions", "shipping Production Apps"];
 
 let wordIndex = 0;
 

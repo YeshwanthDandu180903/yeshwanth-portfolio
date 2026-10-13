@@ -103,51 +103,50 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center justify-content-center text-center">
+    <section id="hero" class="d-flex align-items-center justify-content-center">
         <canvas id="bg-canvas"></canvas>
-        <div class="container">
-            <div class="row justifty-content-center">
-                <div class="col-lg-8 mx-auto">
-                    <div class="mb-4">
-                        <span class="status-badge">
+        <div class="container position-relative py-5">
+            <div class="row align-items-center g-4 g-lg-5">
+                <!-- Left: Yeshwanth Dandu Section -->
+                <div class="col-lg-6 text-center text-lg-start hero-intro-col">
+                    <div class="mb-4 d-inline-flex">
+                        <span class="status-badge py-2 px-3 fs-6">
                             <span class="pulse-dot"></span>
                             Available for Opportunities
                         </span>
                     </div>
-                    <div class="profile-img-container mb-4">
+                    <div class="profile-img-container mb-4 ms-lg-0 mx-auto">
                         <img src="images/personal/my_photo.jpeg" alt="Yeshwanth Dandu"
                             class="profile-img rounded-circle shadow-lg">
                     </div>
                     <h1 class="display-3 fw-bold mb-3 name-title">Yeshwanth Dandu</h1>
-                    <h2 class="h4 mb-4 text-muted-light typing-container">
-                        I am <span class="typing-text"></span><span class="cursor">|</span>
+                    <h2 class="h3 mb-3 text-muted-light typing-container">
+                        I am <span class="typing-text text-accent"></span><span class="cursor">|</span>
                     </h2>
-                    <p class="lead mb-5 text-description">
-                        Turning Data into Decisions | Engineering Intelligence from Data | Math-First AI Systems<br>
-                        Specializing in Machine Learning, MLOps, and Generative AI
+                    <p class="lead mb-0 text-description fs-5">
+                        Engineering Intelligence into Scalable Production Software.<br>
+                        <span class="text-accent fw-semibold">Multi-Tenant RAG Architectures • Applied ML • Production MLOps Pipelines</span>
                     </p>
-
                 </div>
-            </div>
 
-            <!-- Code Snippet -->
-            <div class="col-lg-6 mx-auto mt-4 px-3">
-                <div class="code-window glass-card text-start">
-                    <div
-                        class="window-header d-flex align-items-center p-2 border-bottom border-secondary border-opacity-25">
-                        <div class="window-dots d-flex gap-2 me-3">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                <!-- Right: in_progress.py Code Window -->
+                <div class="col-lg-6 hero-code-col">
+                    <div class="code-window glass-card text-start">
+                        <div
+                            class="window-header d-flex align-items-center p-2 border-bottom border-secondary border-opacity-25">
+                            <div class="window-dots d-flex gap-2 me-3">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="small text-muted-light font-monospace">in_progress.py</span>
                         </div>
-                        <span class="small text-muted-light font-monospace">in_progress.py</span>
-                    </div>
-                    <div class="window-body p-3 font-monospace small">
-                        <div id="code-typewriter"></div>
+                        <div class="window-body p-3 p-md-4 font-monospace small">
+                            <div id="code-typewriter"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!-- Background Elements -->
         <div class="hero-bg-overlay"></div>
@@ -173,12 +172,8 @@
                     <div class="about-text">
                         <h3 class="h4 mb-3">Data Scientist & AI Enthusiast</h3>
                         <p class="text-muted-light mb-4">
-                            I am a final-year B.Tech student specializing in Data Science at the Institute of
-                            Aeronautical Engineering, expected to graduate in April 2026.
-                            My expertise spans Machine Learning, Deep Learning, and Generative AI, with practical
-                            experience in building RAG systems and MLOps pipelines.
-                            Previously, I interned as a Data Analyst at Makri Solutions, analyzing large-scale
-                            healthcare datasets.
+                            B.Tech in CSE (Data Science) graduate from <strong>IARE</strong> (2026, CGPA: 8.01) specializing in Generative AI, RAG systems, and production MLOps.
+                            Joined <strong>Yugaas</strong> to architect and execute <strong>Chatplug</strong> (multi-tenant RAG SaaS) based on their product plan using my RAG expertise, and co-built <strong>FitFlix</strong> (team-engineered Apr–Oct, live on iOS &amp; Android).
                         </p>
                         <div class="row g-3 mt-2" id="stats-counter-section">
                             <div class="col-6">
@@ -265,9 +260,29 @@
 
             <!-- Hardcoded Content Display -->
             <div id="linkedin-content-display" class="fade-in-section">
-                <div class="row g-4">
-                    <!-- Top Featured Post -->
-                    <div class="col-lg-5">
+                <!-- Two Top Featured Posts -->
+                <div class="row g-4 mb-4">
+                    <!-- Featured Post 1: ChatPlug -->
+                    <div class="col-lg-6">
+                        <div
+                            class="glass-card p-4 h-100 position-relative overflow-hidden featured-post-card d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center w-100 mb-3">
+                                <div class="badge bg-accent">Featured Post</div>
+                                <small class="text-muted-light">Apr 2026</small>
+                            </div>
+                            <h3 class="h4 fw-bold mb-3">ChatPlug — Multi-Tenant RAG SaaS</h3>
+                            <p class="text-muted-light mb-4 flex-grow-1">
+                                Collaborated with Sagun Varma to architect and engineer <strong>ChatPlug</strong>, a SaaS-based Multi-Tenant RAG system. Enables businesses to upload documents, build isolated knowledge bases, and connect intelligent chatbots to their websites using API keys.
+                            </p>
+                            <a href="https://lnkd.in/p/dEftA_wH"
+                                target="_blank" class="btn btn-sm btn-outline-accent stretched-link mt-auto">
+                                View Post <i class="fab fa-linkedin ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured Post 2: T-Hub Networking -->
+                    <div class="col-lg-6">
                         <div
                             class="glass-card p-4 h-100 position-relative overflow-hidden featured-post-card d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center w-100 mb-3">
@@ -276,8 +291,7 @@
                             </div>
                             <h3 class="h4 fw-bold mb-3">Networking at T-Hub</h3>
                             <p class="text-muted-light mb-4 flex-grow-1">
-                                Connecting with industry leaders at T-Hub Hyderabad. Engaging in deep discussions on
-                                Data Analysis, sharing insights, and building the future of tech networks.
+                                Connecting with industry leaders at T-Hub Hyderabad. Engaging in deep discussions on Data Analysis, sharing insights, and building the future of tech networks.
                             </p>
                             <a href="https://www.linkedin.com/posts/yeshwanthdandu_dataanalysis-thubhyderabad-networking-activity-7268920008246718464-NmaL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
                                 target="_blank" class="btn btn-sm btn-outline-accent stretched-link mt-auto">
@@ -285,58 +299,73 @@
                             </a>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Recent Posts -->
-                    <div class="col-lg-7">
-                        <h4 class="h5 fw-bold mb-3 px-2">Recent Posts</h4>
-                        <div class="row g-3">
-                            <!-- Post 1: ML/DS/MLOps -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
-                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">ML & MLOps Ecosystem</h5>
-                                    </div>
-                                    <small class="text-muted-accent d-block mb-2">January 2026</small>
-                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
-                                        Exploring the synergy between Data Science and MLOps for scalable AI.
-                                    </p>
-                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_machinelearning-datascience-mlops-ugcPost-7421424452342771712-FDWC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
-                                        target="_blank"
-                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
-                                        &rarr;</a>
+                <!-- Recent Posts Grid -->
+                <div class="recent-posts-block mt-3">
+                    <h4 class="h5 fw-bold mb-3 px-1">Recent Updates</h4>
+                    <div class="row g-3">
+                        <!-- Post 1: SwayamMail @ Yugaas -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 fw-bold mb-0 text-truncate-2">SwayamMail by Yugaas</h5>
                                 </div>
+                                <small class="text-muted-accent d-block mb-2">June 2026</small>
+                                <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                    India-first transactional email infrastructure for OTPs &amp; notifications with developer APIs.
+                                </p>
+                                <a href="https://linkedin.com/in/yeshwanthdandu"
+                                    target="_blank"
+                                    class="small text-accent text-decoration-none stretched-link mt-auto">Read &rarr;</a>
                             </div>
-                            <!-- Post 2: Oracle GenAI -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
-                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">Oracle GenAI 2025</h5>
-                                    </div>
-                                    <small class="text-muted-accent d-block mb-2">December 2025</small>
-                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
-                                        Certified in Oracle Cloud Infrastructure GenAI. Mastering LLMs & Agents.
-                                    </p>
-                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_2025journey-oracle-generativeai-ugcPost-7413619654176436225-XbiY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
-                                        target="_blank"
-                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
-                                        &rarr;</a>
+                        </div>
+
+                        <!-- Post 2: ML & MLOps Ecosystem -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 fw-bold mb-0 text-truncate-2">ML &amp; MLOps Ecosystem</h5>
                                 </div>
+                                <small class="text-muted-accent d-block mb-2">January 2026</small>
+                                <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                    Exploring the synergy between Data Science and MLOps for scalable AI.
+                                </p>
+                                <a href="https://www.linkedin.com/posts/yeshwanthdandu_machinelearning-datascience-mlops-ugcPost-7421424452342771712-FDWC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                    target="_blank"
+                                    class="small text-accent text-decoration-none stretched-link mt-auto">Read &rarr;</a>
                             </div>
-                            <!-- Post 3: Healthcare AI -->
-                            <div class="col-md-6 col-lg-4">
-                                <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
-                                    <div class="d-flex justify-content-between align-items-start mb-2">
-                                        <h5 class="h6 fw-bold mb-0 text-truncate-2">Healthcare AI</h5>
-                                    </div>
-                                    <small class="text-muted-accent d-block mb-2">December 2025</small>
-                                    <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
-                                        Revolutionizing medical imaging with Deep Learning for tumor diagnosis.
-                                    </p>
-                                    <a href="https://www.linkedin.com/posts/yeshwanthdandu_healthcareai-deeplearning-medicalimaging-ugcPost-7413601301118300161-TbWQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
-                                        target="_blank"
-                                        class="small text-accent text-decoration-none stretched-link mt-auto">Read
-                                        &rarr;</a>
+                        </div>
+
+                        <!-- Post 3: Oracle GenAI -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 fw-bold mb-0 text-truncate-2">Oracle GenAI 2025</h5>
                                 </div>
+                                <small class="text-muted-accent d-block mb-2">December 2025</small>
+                                <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                    Certified in Oracle Cloud Infrastructure GenAI. Mastering LLMs &amp; Agents.
+                                </p>
+                                <a href="https://www.linkedin.com/posts/yeshwanthdandu_2025journey-oracle-generativeai-ugcPost-7413619654176436225-XbiY?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                    target="_blank"
+                                    class="small text-accent text-decoration-none stretched-link mt-auto">Read &rarr;</a>
+                            </div>
+                        </div>
+
+                        <!-- Post 4: Healthcare AI -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="glass-card p-3 h-100 recent-post-card d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 fw-bold mb-0 text-truncate-2">Healthcare AI</h5>
+                                </div>
+                                <small class="text-muted-accent d-block mb-2">December 2025</small>
+                                <p class="small text-muted-light mb-3 text-truncate-3 flex-grow-1">
+                                    Revolutionizing medical imaging with Deep Learning for tumor diagnosis.
+                                </p>
+                                <a href="https://www.linkedin.com/posts/yeshwanthdandu_healthcareai-deeplearning-medicalimaging-ugcPost-7413601301118300161-TbWQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEq1cqUBL5oc3DOB_pm6IXo6RiMCsvBl8qg"
+                                    target="_blank"
+                                    class="small text-accent text-decoration-none stretched-link mt-auto">Read &rarr;</a>
                             </div>
                         </div>
                     </div>
@@ -365,17 +394,16 @@
                         <h5 class="skill-category-title">Agentic AI &amp; LLM Engineering</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">LangChain</span>
                         <span class="skill-pill">LangGraph</span>
+                        <span class="skill-pill">LangChain</span>
                         <span class="skill-pill">CrewAI</span>
+                        <span class="skill-pill">Multi-Agent Systems</span>
+                        <span class="skill-pill">Tool &amp; Function Calling</span>
                         <span class="skill-pill">OpenAI APIs</span>
                         <span class="skill-pill">Hugging Face</span>
                         <span class="skill-pill">Llama-3 (Groq)</span>
                         <span class="skill-pill">Prompt Engineering</span>
-                        <span class="skill-pill">Multi-Agent Systems</span>
-                        <span class="skill-pill">Tool Calling</span>
-                        <span class="skill-pill">LLM Orchestration</span>
-                        <span class="skill-pill">Context Engineering</span>
+                        <span class="skill-pill">Structured Outputs</span>
                     </div>
                 </div>
 
@@ -386,55 +414,50 @@
                         <h5 class="skill-category-title">RAG &amp; Semantic Search</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">RAG Pipelines</span>
-                        <span class="skill-pill">Qdrant</span>
-                        <span class="skill-pill">FAISS Vector DB</span>
+                        <span class="skill-pill">Advanced RAG</span>
+                        <span class="skill-pill">Qdrant Vector DB</span>
+                        <span class="skill-pill">FAISS</span>
+                        <span class="skill-pill">Hybrid Search (BM25 + Dense)</span>
+                        <span class="skill-pill">BGE Reranker</span>
                         <span class="skill-pill">FastEmbed</span>
-                        <span class="skill-pill">BGE Embeddings</span>
-                        <span class="skill-pill">Hybrid Search</span>
-                        <span class="skill-pill">Semantic Retrieval</span>
-                        <span class="skill-pill">Re-ranking</span>
                         <span class="skill-pill">Chunking Strategies</span>
-                        <span class="skill-pill">Context Injection</span>
+                        <span class="skill-pill">Query Transformation</span>
                     </div>
                 </div>
 
-                <!-- 3. Machine Learning & NLP -->
+                <!-- 3. Machine Learning & Deep Learning -->
                 <div class="skill-category-card">
                     <div class="skill-category-header">
                         <i class="fas fa-brain" style="color: #f472b6;"></i>
                         <h5 class="skill-category-title">Machine Learning &amp; Deep Learning</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">Scikit-learn</span>
-                        <span class="skill-pill">TensorFlow</span>
                         <span class="skill-pill">PyTorch</span>
-                        <span class="skill-pill">Transformers</span>
+                        <span class="skill-pill">TensorFlow</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Hugging Face Transformers</span>
+                        <span class="skill-pill">CNNs &amp; Computer Vision</span>
                         <span class="skill-pill">EfficientNet-B2</span>
-                        <span class="skill-pill">CNNs</span>
-                        <span class="skill-pill">Computer Vision</span>
-                        <span class="skill-pill">XGBoost</span>
-                        <span class="skill-pill">Model Evaluation</span>
+                        <span class="skill-pill">XGBoost &amp; LightGBM</span>
                         <span class="skill-pill">Feature Engineering</span>
+                        <span class="skill-pill">Model Evaluation &amp; Cross-Validation</span>
                     </div>
                 </div>
 
-                <!-- 4. Mobile & Frontend Engineering (FitFlix Stack) -->
+                <!-- 4. Mobile & Frontend (FitFlix Stack) -->
                 <div class="skill-category-card">
                     <div class="skill-category-header">
                         <i class="fas fa-mobile-alt" style="color: #34d399;"></i>
-                        <h5 class="skill-category-title">Mobile &amp; Frontend (FitFlix)</h5>
+                        <h5 class="skill-category-title">Mobile &amp; Frontend (FitFlix Stack)</h5>
                     </div>
                     <div class="skill-pills-wrap">
                         <span class="skill-pill">Flutter</span>
                         <span class="skill-pill">Dart</span>
-                        <span class="skill-pill">Cross-Platform Apps</span>
-                        <span class="skill-pill">Frontdesk Portal</span>
-                        <span class="skill-pill">State Management</span>
-                        <span class="skill-pill">HTML5 &amp; CSS3</span>
+                        <span class="skill-pill">State Management (Provider/Bloc)</span>
+                        <span class="skill-pill">Mobile REST Client &amp; APIs</span>
                         <span class="skill-pill">JavaScript (ES6+)</span>
-                        <span class="skill-pill">Glassmorphism UI</span>
-                        <span class="skill-pill">Responsive Design</span>
+                        <span class="skill-pill">HTML5 &amp; CSS3</span>
+                        <span class="skill-pill">Responsive UI / Mobile UX</span>
                     </div>
                 </div>
 
@@ -447,31 +470,28 @@
                     <div class="skill-pills-wrap">
                         <span class="skill-pill">FastAPI</span>
                         <span class="skill-pill">Flask</span>
-                        <span class="skill-pill">Async APIs (Uvicorn)</span>
+                        <span class="skill-pill">Python (AsyncIO / Uvicorn)</span>
                         <span class="skill-pill">RESTful APIs</span>
-                        <span class="skill-pill">Pydantic</span>
-                        <span class="skill-pill">CORS Middleware</span>
-                        <span class="skill-pill">API Integration</span>
-                        <span class="skill-pill">Background Workers</span>
-                        <span class="skill-pill">Microservices</span>
+                        <span class="skill-pill">Pydantic Data Validation</span>
+                        <span class="skill-pill">Microservices Architecture</span>
+                        <span class="skill-pill">JWT Auth &amp; Security</span>
+                        <span class="skill-pill">API Rate Limiting</span>
                     </div>
                 </div>
 
-                <!-- 6. MLOps & Production Pipelines -->
+                <!-- 6. MLOps & Lifecycle Pipelines -->
                 <div class="skill-category-card">
                     <div class="skill-category-header">
                         <i class="fas fa-cogs" style="color: #a78bfa;"></i>
                         <h5 class="skill-category-title">MLOps &amp; Lifecycle Pipelines</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">ML Pipelines</span>
-                        <span class="skill-pill">Automated Retraining</span>
-                        <span class="skill-pill">CI/CD Automation</span>
-                        <span class="skill-pill">Docker Containerization</span>
-                        <span class="skill-pill">Model Serving</span>
+                        <span class="skill-pill">Automated Retraining Pipelines</span>
+                        <span class="skill-pill">Model Serving &amp; Inference APIs</span>
                         <span class="skill-pill">Model Versioning</span>
-                        <span class="skill-pill">Artifact Logging</span>
-                        <span class="skill-pill">AWS S3 Artifacts</span>
+                        <span class="skill-pill">Artifact Logging &amp; Registry</span>
+                        <span class="skill-pill">Data Drift Monitoring</span>
+                        <span class="skill-pill">Pipeline Orchestration</span>
                     </div>
                 </div>
 
@@ -483,14 +503,13 @@
                     </div>
                     <div class="skill-pills-wrap">
                         <span class="skill-pill">ETL Pipelines</span>
-                        <span class="skill-pill">Exploratory Data Analysis</span>
                         <span class="skill-pill">Pandas</span>
                         <span class="skill-pill">NumPy</span>
+                        <span class="skill-pill">Exploratory Data Analysis (EDA)</span>
+                        <span class="skill-pill">Data Cleaning &amp; Validation</span>
                         <span class="skill-pill">Power BI</span>
                         <span class="skill-pill">Tableau</span>
-                        <span class="skill-pill">Healthcare Analytics</span>
-                        <span class="skill-pill">Data Validation</span>
-                        <span class="skill-pill">Data Storytelling</span>
+                        <span class="skill-pill">Statistical Analysis &amp; Testing</span>
                     </div>
                 </div>
 
@@ -501,14 +520,13 @@
                         <h5 class="skill-category-title">Databases &amp; Storage</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">Qdrant</span>
                         <span class="skill-pill">PostgreSQL</span>
                         <span class="skill-pill">MySQL</span>
+                        <span class="skill-pill">Redis (Caching &amp; Rate Limiting)</span>
                         <span class="skill-pill">MongoDB</span>
                         <span class="skill-pill">SQL Server</span>
-                        <span class="skill-pill">Redis</span>
-                        <span class="skill-pill">FAISS Indexing</span>
-                        <span class="skill-pill">NoSQL Databases</span>
+                        <span class="skill-pill">Database Indexing &amp; Query Optimization</span>
+                        <span class="skill-pill">Connection Pooling</span>
                     </div>
                 </div>
 
@@ -519,14 +537,13 @@
                         <h5 class="skill-category-title">Cloud, DevOps &amp; Deployment</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">AWS (S3, EC2)</span>
                         <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">AWS (EC2, S3)</span>
+                        <span class="skill-pill">GitHub Actions (CI/CD)</span>
                         <span class="skill-pill">Git &amp; GitHub</span>
-                        <span class="skill-pill">CI/CD Workflows</span>
-                        <span class="skill-pill">Vercel</span>
                         <span class="skill-pill">Hugging Face Spaces</span>
-                        <span class="skill-pill">Model Deployment</span>
-                        <span class="skill-pill">Containerization</span>
+                        <span class="skill-pill">Vercel / Render</span>
+                        <span class="skill-pill">Linux &amp; Bash Scripting</span>
                     </div>
                 </div>
 
@@ -537,11 +554,11 @@
                         <h5 class="skill-category-title">Currently Exploring</h5>
                     </div>
                     <div class="skill-pills-wrap">
-                        <span class="skill-pill">LLM Evaluation Techniques</span>
-                        <span class="skill-pill">AI Infrastructure</span>
-                        <span class="skill-pill">JEV Architecture</span>
-                        <span class="skill-pill">Research Papers</span>
-                        <span class="skill-pill">System Design</span>
+                        <span class="skill-pill">LLM Evaluation (Ragas / TruLens)</span>
+                        <span class="skill-pill">AI Infrastructure &amp; GPU Scaling</span>
+                        <span class="skill-pill">Distributed System Design</span>
+                        <span class="skill-pill">Model Quantization (GGUF / vLLM)</span>
+                        <span class="skill-pill">Multimodal AI</span>
                     </div>
                 </div>
             </div>
@@ -566,14 +583,9 @@
                                 <span class="date badge bg-accent mb-2">May 2024 – June 2024</span>
                                 <h4 class="h5 fw-bold">Data Analysis Intern</h4>
                                 <h5 class="h6 text-muted-accent mb-3">Makri Solutions (OPC) Pvt Ltd</h5>
-                                <p class="small mb-0 text-muted-light">Analyzed healthcare data of 21M+ individuals
-                                    across India. Focused on IMR, MMR, and TFR metrics. Built dashboards using Python
-                                    and Power BI, improving data accuracy through cross-validation.</p>
+                                <p class="small mb-0 text-muted-light">Analyzed healthcare data of 21M+ individuals across India. Focused on IMR, MMR, and TFR metrics. Built dashboards using Python and Power BI, improving data accuracy through cross-validation.</p>
                             </div>
                         </div>
-                        <!-- Item 2 -->
-                        <!-- Item 2 removed -->
-
                     </div>
                 </div>
             </div>
@@ -615,7 +627,7 @@
                             <h3 class="project-title">Chatplug</h3>
                             <span class="project-category">Multi-Tenant RAG SaaS</span>
                             <p class="project-desc">
-                                Production-grade multi-tenant RAG SaaS platform with isolated Qdrant vector collections, 5-layer async security middleware, Redis caching/rate limiting, PostgreSQL, BGE reranking, and one-script embeddable website chatbot widgets.
+                                Production-grade multi-tenant RAG SaaS platform engineered for Yugaas based on their product plan, featuring isolated Qdrant vector collections, 5-layer async security middleware, Redis caching/rate limiting, PostgreSQL, BGE reranking, and one-script embeddable chatbot widgets.
                             </p>
                             <div class="tech-stack-tags">
                                 <span class="tech-tag cyan">#FastAPI</span>
@@ -642,9 +654,9 @@
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">FitFlix</h3>
-                            <span class="project-category">Flutter App & MLOps</span>
+                            <span class="project-category">Flutter App &amp; MLOps • Live on iOS &amp; Android</span>
                             <p class="project-desc">
-                                End-to-end fitness platform featuring a cross-platform Flutter mobile app, frontdesk management portal, robust backend APIs, and integrated MLOps pipeline for personalized workout intelligence.
+                                End-to-end fitness platform where I joined their engineering team from April to October, driving continuous feature enhancements and optimizations across the full app building lifecycle. Now live on iOS &amp; Android, featuring a cross-platform Flutter app, frontdesk management portal, robust backend APIs, and integrated MLOps pipeline for personalized workout intelligence.
                             </p>
                             <div class="tech-stack-tags">
                                 <span class="tech-tag cyan">#Flutter</span>
@@ -966,11 +978,11 @@
                         <!-- Item 3: B.Tech -->
                         <div class="timeline-item left">
                             <div class="timeline-content glass-card p-4">
-                                <span class="date badge bg-accent mb-2">2023 – Present</span>
+                                <span class="date badge bg-accent mb-2">2023 – 2026</span>
                                 <h4 class="h5 fw-bold">B.Tech in CSE (Data Science)</h4>
-                                <h5 class="h6 text-muted-accent mb-3">Institute of Aeronautical Engineering</h5>
-                                <p class="small mb-0 text-muted-light">Expected Graduation: May 2026. CGPA: 7.93/10.
-                                    Focusing on deep learning, MLOps, and algorithmic problem solving.</p>
+                                <h5 class="h6 text-muted-accent mb-3">Institute of Aeronautical Engineering (IARE)</h5>
+                                <p class="small mb-0 text-muted-light">Graduated: 2026. CGPA: 8.01/10.
+                                    Focused on deep learning, MLOps, and algorithmic problem solving.</p>
                             </div>
                         </div>
                     </div>
@@ -1137,7 +1149,7 @@
     <!-- Footer -->
     <footer class="footer py-4">
         <div class="container text-center">
-            <p class="mb-0 small text-muted-light">&copy; 2025 Yeshwanth Dandu. All Rights Reserved.</p>
+            <p class="mb-0 small text-muted-light">&copy; 2026 Yeshwanth Dandu. All Rights Reserved.</p>
             <p class="mb-0 x-small text-muted-dark mt-1">Design inspired by Modern Data Science Aesthetics.</p>
         </div>
     </footer>
