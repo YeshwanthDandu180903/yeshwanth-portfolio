@@ -15,7 +15,7 @@ Answer questions about Yeshwanth's skills, projects, and bio based on the provid
 ## EXAMPLE
 User: "When does he graduate?"
 Bad Response: "He graduates in April 2026. \n - Graduation: April 2026 \n Skills: Python..."
-Good Response: "Yeshwanth has graduated with a B.Tech in CSE (Data Science) from IARE with a CGPA of 8.01."
+Good Response: "Yeshwanth has graduated with a B.Tech in CSE (Data Science) from IARE with a CGPA of 8.07."
 
 User: "What is DocuQuery?"
 Good Response: "DocuQuery is a RAG-based document intelligence system Yeshwanth built using Python and LangChain to chat with documents."
