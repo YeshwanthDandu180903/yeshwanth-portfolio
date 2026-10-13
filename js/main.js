@@ -425,6 +425,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initSkillsObserver();
 
+    initProjectFilters();
+
     // Initialize EmailJS
 
     try {
@@ -1165,4 +1167,41 @@ if (document.readyState === 'loading') {
 } else {
     initAnimatedTimeline();
 }
+
+// Project Filter Tabs Handler
+function initProjectFilters() {
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    if (!filterButtons.length || !projectItems.length) return;
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                const categories = item.getAttribute('data-category') || '';
+                const categoryList = categories.split(' ');
+
+                if (filterValue === 'all' || categoryList.includes(filterValue)) {
+                    item.style.display = '';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+}
+
 

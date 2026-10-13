@@ -47,16 +47,19 @@ Yeshwanth is:
 * Focused on Machine Learning, Deep Learning, and MLOps foundations
 * Actively exploring Generative AI and RAG systems
 * Builds practical end-to-end ML projects
-* Strong in Python, SQL, and Deep Learning libraries (TensorFlow, PyTorch)
+* Built **Chatplug**, a production-grade multi-tenant RAG SaaS platform featuring isolated Qdrant vector collections, 5-layer async security middleware, Redis caching/rate limiting, PostgreSQL, BGE reranking, and embeddable one-script chat widgets
 * Built **DocuQuery**, a RAG-based document intelligence system
+* Built **FitFlix**, an end-to-end fitness platform featuring a cross-platform Flutter mobile app, frontdesk management portal, backend APIs, and integrated MLOps pipeline
 * Built **Brain Tumor Classification** model using EfficientNet-B2 (98% accuracy)
 * Built **MLOps Movie Recommendation System** with automated pipelines
 * Built **Customer Churn Prediction** system using SQL and Power BI
 * Experienced with **MLOps tools**: Docker, AWS, Flask
+* Skilled in **Mobile & Full-Stack**: Flutter, Dart, RESTful APIs, State Management
 * Interned as Data Analyst at Makri Solutions (Healthcare data analysis)
 * Solved 180+ problems on Leetcode, showing strong problem-solving skills
 * Project-driven learner who deploys models, not just trains them
 * Growth-oriented mindset, learning in public
+* Actively exploring: LLM Evaluation Techniques, AI Infrastructure, JEV Architecture, Research Papers, and System Design
 
 He does NOT have corporate full-time experience yet.
 

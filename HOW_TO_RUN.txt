@@ -1,0 +1,216 @@
+================================================================================
+           YESHWANTH PORTFOLIO & AI RAG BACKEND - SETUP & RUN GUIDE
+================================================================================
+
+This guide covers everything required to set up, configure, and run both the 
+Frontend Portfolio and the FastAPI RAG Chatbot Backend locally with zero errors.
+
+--------------------------------------------------------------------------------
+TABLE OF CONTENTS
+--------------------------------------------------------------------------------
+1. Prerequisites
+2. Step 1: Virtual Environment Setup
+3. Step 2: Install Dependencies
+4. Step 3: Environment Variables Configuration (.env)
+5. Step 4: Run the RAG Backend Server
+6. Step 5: Connect & Launch the Frontend
+7. Alternative: Running with Docker
+8. Troubleshooting & Common Errors (FAQ)
+
+================================================================================
+1. PREREQUISITES
+================================================================================
+Before you begin, ensure you have:
+- Python 3.9, 3.10, or 3.11 installed. (Verify with: python --version)
+- pip installed and updated.
+- A free Groq API Key (get one from https://console.groq.com/keys).
+- Any modern web browser (Chrome, Edge, Firefox, Brave).
+
+================================================================================
+2. STEP 1: VIRTUAL ENVIRONMENT SETUP
+================================================================================
+Always use a Python virtual environment to avoid package conflicts.
+
+Open PowerShell or Command Prompt in the project root directory:
+  c:\Users\Yeshwanth\portfolio\yeshwanth-portfolio
+
+[On Windows PowerShell]:
+  python -m venv venv
+
+  # If you get a script execution policy restriction error in PowerShell, run:
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+  # Activate the virtual environment:
+  .\venv\Scripts\Activate.ps1
+
+[On Windows Command Prompt (cmd)]:
+  python -m venv venv
+  venv\Scripts\activate.bat
+
+[On macOS / Linux]:
+  python3 -m venv venv
+  source venv/bin/activate
+
+When activated, you will see `(venv)` at the beginning of your terminal prompt.
+
+================================================================================
+3. STEP 2: INSTALL DEPENDENCIES
+================================================================================
+With `(venv)` active, upgrade pip and install all required packages:
+
+  python -m pip install --upgrade pip
+  pip install -r requirements.txt
+
+Dependencies installed:
+- fastapi & uvicorn: High-performance web framework and ASGI server
+- groq: Fast Llama-3 LLM inference API client
+- langchain, langchain-community, langchain-huggingface: RAG orchestration
+- faiss-cpu: Vector database for fast semantic similarity search
+- fastembed & sentence-transformers: Embedding models
+- pydantic & python-dotenv: Schema validation and environment management
+
+================================================================================
+4. STEP 3: ENVIRONMENT VARIABLES CONFIGURATION (.env)
+================================================================================
+The RAG backend requires a Groq API key to answer questions.
+
+1. Create a file named `.env` in the root project folder (you can copy `.env.example`):
+   
+   [PowerShell]:
+     Copy-Item .env.example .env
+
+   [Command Prompt]:
+     copy .env.example .env
+
+   [macOS / Linux]:
+     cp .env.example .env
+
+2. Open the `.env` file and replace the placeholder with your actual Groq API key:
+   GROQ_API_KEY=gsk_your_actual_groq_api_key_here
+   PORT=8000
+
+* Note: Make sure there are no spaces around the `=` sign and no quotes around the key.
+
+================================================================================
+5. STEP 4: RUN THE RAG BACKEND SERVER
+================================================================================
+From the project root folder (with `(venv)` activated):
+
+  python -m uvicorn rag_backend_new.main:app --reload --port 8000 --host 127.0.0.1
+
+Expected Terminal Output:
+----------------------------------------------------------------------
+INFO:     Will watch for changes in these directories: [...]
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [...]
+Initializing Portfolio Agent...
+Agent initialized. Resources will be loaded on first request.
+Portfolio Agent initialized successfully.
+INFO:     Application startup complete.
+----------------------------------------------------------------------
+
+Verifying the Backend is Healthy:
+1. Open your browser and visit:
+   http://127.0.0.1:8000/
+   It should return:
+   {"status":"RAG Backend Running with Agent Active"}
+
+2. Interactive Swagger API Docs:
+   http://127.0.0.1:8000/docs
+   You can test endpoints `/chat` and `/linkedin_posts` directly here.
+
+Keep this terminal window running!
+
+================================================================================
+6. STEP 5: CONNECT & LAUNCH THE FRONTEND
+================================================================================
+
+A. Point Frontend to Localhost Backend:
+   1. Open `js/config.js` in your editor.
+   2. By default, it points to the remote Hugging Face backend.
+   3. To use your local backend instead, edit `js/config.js` so it looks like:
+
+      const CONFIG = {
+          // Development URL (Localhost)
+          API_URL: 'http://127.0.0.1:8000'
+
+          // Production URL (Hugging Face Spaces)
+          // API_URL: 'https://yeshu1809-portfolio-backend.hf.space'
+      };
+
+B. Serve the Frontend:
+   Open a SECOND terminal window in the project root directory:
+
+   Option 1 - Using Python's built-in HTTP server (Recommended, zero extra install):
+     python -m http.server 3000
+
+     Then open your browser and go to:
+     http://localhost:3000
+
+   Option 2 - Using VS Code Live Server:
+     Right-click `index.html` in VS Code and click "Open with Live Server".
+
+   Option 3 - Direct file opening:
+     You can double-click `index.html` to open it directly in your browser.
+     (Note: Serving via HTTP server is recommended for correct asset loading).
+
+C. Test the AI Chatbot:
+   1. Click on the chat bubble icon at the bottom right.
+   2. Type a message, for example: "What projects has Yeshwanth worked on?" or "Tell me about Yeshwanth's skills."
+   3. You will receive a real-time, context-aware RAG response powered by FAISS and Groq!
+
+================================================================================
+7. ALTERNATIVE: RUNNING WITH DOCKER
+================================================================================
+If you prefer Docker:
+
+1. Build the Docker image:
+   docker build -t portfolio-rag-backend .
+
+2. Run the container:
+   docker run -p 7860:7860 -e GROQ_API_KEY="your_groq_api_key_here" portfolio-rag-backend
+
+3. Access the API at:
+   http://127.0.0.1:7860/
+
+================================================================================
+8. TROUBLESHOOTING & COMMON ERRORS (FAQ)
+================================================================================
+
+Q1: Error: "GROQ_API_KEY environment variable not set"
+A1: Ensure your `.env` file exists in the root folder with a valid `GROQ_API_KEY`.
+    Also verify that python-dotenv is installed.
+
+Q2: PowerShell says "File Activate.ps1 cannot be loaded because running scripts is disabled"
+A2: Run this command in PowerShell before activating:
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    Then re-run `.\venv\Scripts\Activate.ps1`.
+
+Q3: Error: "Address already in use" on port 8000
+A3: Either stop the existing process running on port 8000, or launch uvicorn on another port:
+    python -m uvicorn rag_backend_new.main:app --reload --port 8001
+    (If you change the port, update `API_URL` in `js/config.js` to match).
+
+Q4: First question in chatbot takes 3-5 seconds to reply
+A4: This is normal! The backend uses lazy-loading: the FAISS vector index and embedding
+    model (`BAAI/bge-small-en-v1.5`) are loaded into memory on the very first query.
+    Subsequent queries will be near-instantaneous.
+
+Q5: Chat says "Network Error" or "Failed to fetch"
+A5: Ensure the backend terminal is running and that the port in `js/config.js`
+    matches the port where uvicorn is hosted (`http://127.0.0.1:8000`).
+
+================================================================================
+SUMMARY QUICK-COMMAND CHEAT SHEET
+================================================================================
+Terminal 1 (Backend):
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  .\venv\Scripts\Activate.ps1
+  python -m uvicorn rag_backend_new.main:app --reload --port 8000
+
+Terminal 2 (Frontend):
+  python -m http.server 3000
+
+Browser:
+  Open http://localhost:3000 and start exploring!
+================================================================================
