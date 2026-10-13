@@ -47,3 +47,5 @@ temp_*.css
 fix_*.py
 
 
+.vercel
+.env*

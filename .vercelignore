@@ -1,0 +1,34 @@
+# Python virtual environment (contains thousands of package files like PyTorch)
+portfolio/
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+
+# Backends and data (hosted separately)
+rag_backend/
+rag_backend_new/
+_archive/
+data/
+scripts/
+faiss_index/
+
+# Environment and secrets
+.env*
+api*.txt
+secrets.json
+config.py
+
+# Documentation and scratch scripts
+*.md
+*.txt
+*.py
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
