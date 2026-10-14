@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=13">
-    <link rel="stylesheet" href="css/chat.css?v=13">
+    <link rel="stylesheet" href="css/style.css?v=16">
+    <link rel="stylesheet" href="css/chat.css?v=16">
 
     <!-- Vercel Web Analytics -->
     <script>
@@ -117,25 +117,25 @@
     <!-- Hero Section -->
     <section id="hero" class="d-flex align-items-center justify-content-center">
         <canvas id="bg-canvas"></canvas>
-        <div class="container position-relative py-5">
+        <div class="container position-relative py-2 py-lg-3">
             <div class="row align-items-center g-4 g-lg-5">
                 <!-- Left: Yeshwanth Dandu Section -->
                 <div class="col-lg-6 text-center text-lg-start hero-intro-col">
-                    <div class="mb-4 d-inline-flex">
+                    <div class="mb-3 d-inline-flex">
                         <span class="status-badge py-2 px-3 fs-6">
                             <span class="pulse-dot"></span>
                             Available for Opportunities
                         </span>
                     </div>
-                    <div class="profile-img-container mb-4 ms-lg-0 mx-auto">
+                    <div class="profile-img-container mb-3 ms-lg-0 mx-auto">
                         <img src="images/personal/my_photo.jpeg" alt="Yeshwanth Dandu"
                             class="profile-img rounded-circle shadow-lg">
                     </div>
-                    <h1 class="display-3 fw-bold mb-3 name-title">Yeshwanth Dandu</h1>
-                    <h2 class="h3 mb-3 text-muted-light typing-container">
+                    <h1 class="display-4 fw-bold mb-2 name-title">Yeshwanth Dandu</h1>
+                    <h2 class="h4 mb-2 text-muted-light typing-container">
                         I am <span class="typing-text text-accent"></span><span class="cursor">|</span>
                     </h2>
-                    <p class="lead mb-0 text-description fs-5">
+                    <p class="lead mb-0 text-description">
                         Engineering Intelligence into Scalable Production Software.<br>
                         <span class="text-accent fw-semibold">Multi-Tenant RAG Architectures • Applied ML • Production MLOps Pipelines</span>
                     </p>
@@ -389,16 +389,16 @@
     <!-- Skills Section -->
     <section id="skills" class="section-padding bg-darker">
         <div class="container">
-            <div class="section-title text-center mb-4">
+            <div class="section-title text-center mb-3">
                 <span class="badge-subtitle">Expertise</span>
                 <h2 class="fw-bold">Skills &amp; Expertise</h2>
                 <div class="title-line"></div>
-                <p class="text-muted-light max-w-700 mx-auto mt-3">
+                <p class="text-muted-light max-w-700 mx-auto mt-2 mb-0 small">
                     A comprehensive full-stack AI, MLOps &amp; App Engineering toolkit — spanning from mobile &amp; client interfaces to LLM orchestration, vector search, and production backend infrastructure.
                 </p>
             </div>
 
-            <div class="skills-expertise-grid mt-5">
+            <div class="skills-expertise-grid mt-4">
                 <!-- 1. Agentic AI & LLM Engineering -->
                 <div class="skill-category-card">
                     <div class="skill-category-header">
@@ -1004,154 +1004,109 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="mb-5 text-center text-lg-start">
-                <span class="badge-subtitle">Connect</span>
-                <h2 class="display-5 fw-bold mb-3">Let's Connect</h2>
-                <p class="text-muted-light lead">Ready to collaborate? Let's build something amazing together.</p>
+    <section id="contact" class="connect-section position-relative overflow-hidden">
+        <!-- Floating Math & Data Science Background Symbols -->
+        <div class="connect-math-bg" aria-hidden="true">
+            <span class="math-sym sym-1">E[x]</span>
+            <span class="math-sym sym-2">1</span>
+            <span class="math-sym sym-3">&Sigma;</span>
+            <span class="math-sym sym-4">0</span>
+            <span class="math-sym sym-5">p(y|x)</span>
+            <span class="math-sym sym-6">0</span>
+            <span class="math-sym sym-7">[ ]</span>
+            <span class="math-sym sym-8">1</span>
+            <span class="math-sym sym-9">&mu;</span>
+            <span class="math-sym sym-10">&lt;/&gt;</span>
+            <span class="math-sym sym-11">E[x]</span>
+            <span class="math-sym sym-12">1</span>
+            <span class="math-sym sym-13">0</span>
+            <span class="math-sym sym-14">1</span>
+            <span class="math-sym sym-15">E[x]</span>
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <!-- Header -->
+            <div class="text-center mb-5">
+                <span class="connect-badge">CONNECT</span>
+                <h2 class="connect-title mt-2">Let's Connect</h2>
+                <p class="connect-subtitle mt-2">Have an opportunity or an interesting project? Let's talk.</p>
             </div>
 
-            <div class="row g-5 align-items-stretch">
-                <!-- Left Column: Contact Info -->
-                <div class="col-lg-5">
-                    <div class="glass-card p-5 h-100 contact-info-card d-flex flex-column justify-content-between">
-                        <div>
-                            <h3 class="fw-bold mb-4">Get In Touch</h3>
-                            <p class="text-muted-light mb-5">
-                                I'm always excited to discuss new opportunities, innovative projects, or just chat about
-                                technology. Feel free to reach out!
-                            </p>
+            <!-- Unified Dual-Column Card -->
+            <div class="connect-card-wrapper mx-auto">
+                <div class="connect-card">
+                    <div class="row g-4 g-lg-5 align-items-stretch">
+                        <!-- Left Column: Direct Outreach -->
+                        <div class="col-md-6 connect-col-left">
+                            <h3 class="connect-col-heading">Get in touch</h3>
+                            <p class="connect-col-text">The fastest way to reach me is by email.</p>
 
-                            <div class="d-flex flex-column gap-4">
-                                <!-- Email -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">Email</h6>
-                                        <a href="mailto:yeshwanthdandu2003@gmail.com"
-                                            class="text-muted-light text-decoration-none small">yeshwanthdandu2003@gmail.com</a>
-                                    </div>
-                                </div>
+                            <a href="mailto:yeshwanthdandu2003@gmail.com" class="btn-connect-solid w-100">
+                                <span class="d-flex align-items-center">
+                                    <i class="fas fa-envelope me-2"></i> Email me
+                                </span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
 
-                                <!-- LinkedIn -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">LinkedIn</h6>
-                                        <a href="https://linkedin.com/in/yeshwanthdandu" target="_blank"
-                                            class="text-muted-light text-decoration-none small">linkedin.com/in/yeshwanthdandu</a>
-                                    </div>
-                                </div>
-
-                                <!-- Location -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">Location</h6>
-                                        <span class="text-muted-light small">Hyderabad, India</span>
-                                    </div>
-                                </div>
-
-                                <!-- Phone -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">Phone</h6>
-                                        <a href="tel:+919346121267"
-                                            class="text-muted-light text-decoration-none small">+91 9346121267</a>
-                                    </div>
-                                </div>
-
-                                <!-- GitHub -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fab fa-github"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">GitHub</h6>
-                                        <a href="https://github.com/YeshwanthDandu180903" target="_blank"
-                                            class="text-muted-light text-decoration-none small">github.com/YeshwanthDandu180903</a>
-                                    </div>
-                                </div>
-
-                                <!-- Kaggle -->
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle">
-                                        <i class="fab fa-kaggle"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold">Kaggle</h6>
-                                        <a href="https://www.kaggle.com/danduyeshwanth" target="_blank"
-                                            class="text-muted-light text-decoration-none small">kaggle.com/danduyeshwanth</a>
-                                    </div>
-                                </div>
+                            <div class="connect-email-caption">
+                                <a href="mailto:yeshwanthdandu2003@gmail.com">yeshwanthdandu2003@gmail.com</a>
                             </div>
+
+                            <a href="https://linkedin.com/in/yeshwanthdandu" target="_blank" rel="noopener noreferrer" class="btn-connect-outline w-100">
+                                <span class="d-flex align-items-center">
+                                    <i class="fab fa-linkedin-in me-2 text-accent"></i> Connect on LinkedIn
+                                </span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
 
-                        <!-- Social Links -->
-                        <div class="mt-5 d-flex gap-3">
-                            <a href="https://github.com/YeshwanthDandu180903" target="_blank"
-                                class="btn btn-outline-accent rounded-circle p-0 d-flex align-items-center justify-content-center"
-                                style="width: 40px; height: 40px;"><i class="fab fa-github"></i></a>
-                            <a href="https://linkedin.com/in/yeshwanthdandu" target="_blank"
-                                class="btn btn-outline-accent rounded-circle p-0 d-flex align-items-center justify-content-center"
-                                style="width: 40px; height: 40px;"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.kaggle.com/danduyeshwanth" target="_blank"
-                                class="btn btn-outline-accent rounded-circle p-0 d-flex align-items-center justify-content-center"
-                                style="width: 40px; height: 40px;"><i class="fab fa-kaggle"></i></a>
-                            <a href="mailto:yeshwanthdandu2003@gmail.com"
-                                class="btn btn-outline-accent rounded-circle p-0 d-flex align-items-center justify-content-center"
-                                style="width: 40px; height: 40px;"><i class="fas fa-envelope"></i></a>
+                        <!-- Right Column: Quick Message Form -->
+                        <div class="col-md-6 connect-col-right">
+                            <h3 class="connect-col-heading">Prefer a quick message?</h3>
+                            <p class="connect-col-text">Send a short message and I'll get back to you soon.</p>
+
+                            <form id="contact-form" class="connect-quick-form">
+                                <input type="hidden" name="from_name" value="Portfolio Visitor">
+                                <input type="hidden" name="subject" value="Quick Message from Portfolio">
+                                <div class="mb-3">
+                                    <textarea class="form-control connect-textarea" id="message" name="message" rows="4"
+                                        placeholder="Write a short message (include your email so I can reply)..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn-connect-solid w-100">
+                                    <span class="d-flex align-items-center">
+                                        <i class="fas fa-paper-plane me-2"></i> Send message
+                                    </span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Right Column: Form -->
-                <div class="col-lg-7">
-                    <div class="glass-card p-4 p-md-5 h-100 contact-form-card">
-                        <form id="contact-form">
-                            <div class="mb-4">
-                                <label for="name" class="form-label text-accent small text-uppercase fw-bold">Your
-                                    Name</label>
-                                <input type="text" class="form-control custom-input" id="name" name="from_name"
-                                    placeholder="What's your name?" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="form-label text-accent small text-uppercase fw-bold">Your
-                                    Email</label>
-                                <input type="email" class="form-control custom-input" id="email" name="from_email"
-                                    placeholder="What's your email?" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="form-label text-accent small text-uppercase fw-bold">Your
-                                    Phone (Optional)</label>
-                                <input type="tel" class="form-control custom-input" id="phone" name="from_phone"
-                                    placeholder="Your phone number">
-                            </div>
-                            <div class="mb-4">
-                                <label for="subject"
-                                    class="form-label text-accent small text-uppercase fw-bold">Subject</label>
-                                <input type="text" class="form-control custom-input" id="subject" name="subject"
-                                    placeholder="What's this about?" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="message" class="form-label text-accent small text-uppercase fw-bold">Your
-                                    Message</label>
-                                <textarea class="form-control custom-input" id="message" name="message" rows="4"
-                                    placeholder="What do you want to say?" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-accent btn-lg w-100 fw-bold py-3 mt-2">Send Message <i
-                                    class="fas fa-paper-plane ms-2"></i></button>
-                        </form>
+            <!-- Bottom Horizontal Meta Row -->
+            <div class="connect-meta-row mt-5">
+                <a href="https://github.com/YeshwanthDandu180903" target="_blank" rel="noopener noreferrer" class="connect-meta-item">
+                    <div class="connect-meta-icon"><i class="fab fa-github"></i></div>
+                    <div class="connect-meta-content">
+                        <span class="connect-meta-title">GitHub</span>
+                        <span class="connect-meta-handle">github.com/YeshwanthDandu180903</span>
+                    </div>
+                </a>
+
+                <a href="https://www.kaggle.com/danduyeshwanth" target="_blank" rel="noopener noreferrer" class="connect-meta-item">
+                    <div class="connect-meta-icon"><i class="fab fa-kaggle"></i></div>
+                    <div class="connect-meta-content">
+                        <span class="connect-meta-title">Kaggle</span>
+                        <span class="connect-meta-handle">kaggle.com/danduyeshwanth</span>
+                    </div>
+                </a>
+
+                <div class="connect-meta-item">
+                    <div class="connect-meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="connect-meta-content">
+                        <span class="connect-meta-title">Location</span>
+                        <span class="connect-meta-handle">Hyderabad, India</span>
                     </div>
                 </div>
             </div>
