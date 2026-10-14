@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=16">
-    <link rel="stylesheet" href="css/chat.css?v=16">
+    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/chat.css?v=17">
 
     <!-- Vercel Web Analytics -->
     <script>
@@ -619,7 +619,8 @@
                 <button class="project-filter-btn" data-filter="mobile-fullstack">Mobile & Full-Stack</button>
                 <button class="project-filter-btn" data-filter="genai-rag">GenAI & RAG</button>
                 <button class="project-filter-btn" data-filter="mlops-cloud">MLOps & Cloud</button>
-                <button class="project-filter-btn" data-filter="vision-ml">Vision & Applied ML</button>
+                <button class="project-filter-btn" data-filter="computer-vision">Computer Vision</button>
+                <button class="project-filter-btn" data-filter="applied-ml">Applied ML</button>
             </div>
 
             <div class="row g-4 justify-content-center" id="projects-grid">
@@ -638,22 +639,25 @@
                         <div class="project-content">
                             <h3 class="project-title">Chatplug</h3>
                             <span class="project-category">Multi-Tenant RAG SaaS</span>
-                            <p class="project-desc">
-                                Production-grade multi-tenant RAG SaaS platform engineered for Yugaas based on their product plan, featuring isolated Qdrant vector collections, 5-layer async security middleware, Redis caching/rate limiting, PostgreSQL, BGE reranking, and one-script embeddable chatbot widgets.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Upload tenant documents &amp; generate API keys to build an isolated vector knowledge base.</li>
+                                <li>Paste the 1-line script tag into any website to deploy a live, context-aware AI chatbot.</li>
+                            </ul>
                             <div class="tech-stack-tags">
-                                <span class="tech-tag cyan">#FastAPI</span>
+                                <span class="tech-tag cyan">#Python</span>
+                                <span class="tech-tag blue">#FastAPI</span>
                                 <span class="tech-tag pink">#Qdrant</span>
-                                <span class="tech-tag purple">#Redis</span>
-                                <span class="tech-tag blue">#PostgreSQL</span>
-                                <span class="tech-tag gold">#Groq</span>
+                                <span class="tech-tag purple">#BGE-Reranker</span>
+                                <span class="tech-tag cyan">#Redis</span>
+                                <span class="tech-tag gold">#AWS-EC2</span>
+                                <span class="tech-tag gold">#Docker</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: FitFlix (Mobile & Full-Stack / MLOps) -->
-                <div class="col-lg-4 col-md-6 project-item" data-category="mobile-fullstack mlops-cloud">
+                <!-- Project 2: FitFlix (Mobile & Web Full-Stack Platform) -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="mobile-fullstack">
                     <div class="project-card-modern fade-in-section">
                         <div class="project-thumb">
                             <img src="images/fitflix/fitflix.svg" alt="FitFlix Mobile App & Platform">
@@ -666,15 +670,19 @@
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">FitFlix</h3>
-                            <span class="project-category">Flutter App &amp; MLOps • Live on iOS &amp; Android</span>
-                            <p class="project-desc">
-                                End-to-end fitness platform where I joined their engineering team from April to October, driving continuous feature enhancements and optimizations across the full app building lifecycle. Now live on iOS &amp; Android, featuring a cross-platform Flutter app, frontdesk management portal, robust backend APIs, and integrated MLOps pipeline for personalized workout intelligence.
-                            </p>
+                            <span class="project-category">Flutter App &amp; Web Dashboard • Live on iOS &amp; Android</span>
+                            <ul class="project-points-list">
+                                <li>Open the live iOS/Android app to log workouts, track health markers, and view training routines.</li>
+                                <li>Schedule appointments, manage bookings, and assign nutrition plans via the Next.js frontdesk dashboard.</li>
+                            </ul>
                             <div class="tech-stack-tags">
                                 <span class="tech-tag cyan">#Flutter</span>
                                 <span class="tech-tag blue">#Dart</span>
-                                <span class="tech-tag purple">#BackendAPI</span>
-                                <span class="tech-tag gold">#MLOps</span>
+                                <span class="tech-tag cyan">#Next.js</span>
+                                <span class="tech-tag blue">#TypeScript</span>
+                                <span class="tech-tag purple">#Express.js</span>
+                                <span class="tech-tag pink">#MongoDB</span>
+                                <span class="tech-tag gold">#TailwindCSS</span>
                             </div>
                         </div>
                     </div>
@@ -695,14 +703,15 @@
                         <div class="project-content">
                             <h3 class="project-title">DocuQuery</h3>
                             <span class="project-category">GenAI & RAG</span>
-                            <p class="project-desc">
-                                Retrieval-Augmented Document Intelligence System using Dense + Sparse search. Processed
-                                1000+ pages of HR/Financial docs, improving retrieval by 35%.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Upload raw PDFs, manuals, or financial spreadsheets directly into the web interface.</li>
+                                <li>Ask questions in plain English to get immediate answers with exact page citations and highlighted source text.</li>
+                            </ul>
                             <div class="tech-stack-tags">
                                 <span class="tech-tag cyan">#Python</span>
-                                <span class="tech-tag purple">#LLMs</span>
+                                <span class="tech-tag purple">#LangChain</span>
                                 <span class="tech-tag pink">#FAISS</span>
+                                <span class="tech-tag blue">#BGE-Embeddings</span>
                                 <span class="tech-tag gold">#Gradio</span>
                             </div>
                         </div>
@@ -725,15 +734,16 @@
                         <div class="project-content">
                             <h3 class="project-title">Insurance MLOps</h3>
                             <span class="project-category">MLOps & Cloud</span>
-                            <p class="project-desc">
-                                End-to-end ML pipeline with automated retraining via CI/CD. Deployed regression &
-                                clustering models using Docker & AWS S3.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Push new dataset updates to trigger automated model retraining and validation pipelines via CI/CD.</li>
+                                <li>Input customer policy details to receive instant claim probability scores served via Dockerized APIs on AWS.</li>
+                            </ul>
                             <div class="tech-stack-tags">
-                                <span class="tech-tag gold">#Docker</span>
-                                <span class="tech-tag blue">#AWS</span>
-                                <span class="tech-tag cyan">#CICD</span>
+                                <span class="tech-tag cyan">#Python</span>
                                 <span class="tech-tag purple">#Scikit-learn</span>
+                                <span class="tech-tag gold">#Docker</span>
+                                <span class="tech-tag blue">#AWS-S3</span>
+                                <span class="tech-tag cyan">#GitHub-Actions</span>
                             </div>
                         </div>
                     </div>
@@ -754,22 +764,24 @@
                         <div class="project-content">
                             <h3 class="project-title">Movie Recommendation System</h3>
                             <span class="project-category">MLOps & RecSys</span>
-                            <p class="project-desc">
-                                End-to-end ML pipeline with MongoDB ingestion. TF-IDF based content similarity model
-                                achieving 81% genre precision. Deployed via Flask & AWS.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Select your favorite films or search genres on the web dashboard.</li>
+                                <li>Computes TF-IDF vector similarity across MongoDB movie catalogs to generate personalized watch recommendations.</li>
+                            </ul>
                             <div class="tech-stack-tags">
-                                <span class="tech-tag pink">#MongoDB</span>
-                                <span class="tech-tag blue">#Flask</span>
-                                <span class="tech-tag gold">#AWS</span>
                                 <span class="tech-tag cyan">#Python</span>
+                                <span class="tech-tag purple">#Scikit-learn</span>
+                                <span class="tech-tag gold">#TF-IDF</span>
+                                <span class="tech-tag blue">#Flask</span>
+                                <span class="tech-tag pink">#MongoDB</span>
+                                <span class="tech-tag gold">#Docker</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 6: Brain Tumor Classification (Vision & Applied ML) -->
-                <div class="col-lg-4 col-md-6 project-item" data-category="vision-ml">
+                <!-- Project 6: Brain Tumor Classification (Computer Vision) -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="computer-vision">
                     <div class="project-card-modern fade-in-section">
                         <div class="project-thumb">
                             <img src="images/brain_tumor/brain_tumor.jpg" alt="Brain Tumor Classification">
@@ -783,22 +795,23 @@
                         <div class="project-content">
                             <h3 class="project-title">Brain Tumor Classification</h3>
                             <span class="project-category">Computer Vision</span>
-                            <p class="project-desc">
-                                Multi-class MRI classification system using EfficientNet-B2. Achieved 98% test accuracy
-                                across 7,000+ MRI scans for automated diagnosis.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Upload a brain MRI scan image into the diagnostic web interface.</li>
+                                <li>EfficientNet-B2 neural network analyzes tissue scans and outputs instant multi-class tumor detection with 98% accuracy.</li>
+                            </ul>
                             <div class="tech-stack-tags">
                                 <span class="tech-tag blue">#TensorFlow</span>
-                                <span class="tech-tag pink">#EfficientNet</span>
-                                <span class="tech-tag cyan">#Flask</span>
+                                <span class="tech-tag cyan">#Keras</span>
+                                <span class="tech-tag pink">#EfficientNet-B2</span>
+                                <span class="tech-tag blue">#Flask</span>
                                 <span class="tech-tag purple">#OpenCV</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 7: Face Recognition (Vision & Applied ML) -->
-                <div class="col-lg-4 col-md-6 project-item" data-category="vision-ml">
+                <!-- Project 7: Face Recognition (Computer Vision) -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="computer-vision">
                     <div class="project-card-modern fade-in-section">
                         <div class="project-thumb">
                             <img src="images/celebrity/celebrity.jpg" alt="Celebrity Face Recognition">
@@ -812,21 +825,22 @@
                         <div class="project-content">
                             <h3 class="project-title">Face Recognition</h3>
                             <span class="project-category">Computer Vision</span>
-                            <p class="project-desc">
-                                Real-time celebrity recognition using Haar cascades. Outputs bounding boxes & confidence
-                                scores for matched faces.
-                            </p>
+                            <ul class="project-points-list">
+                                <li>Connect a live camera feed or upload portrait images to the OpenCV pipeline.</li>
+                                <li>Automatically tracks facial landmarks and renders bounding boxes with real-time celebrity identity matches.</li>
+                            </ul>
                             <div class="tech-stack-tags">
+                                <span class="tech-tag cyan">#Python</span>
                                 <span class="tech-tag pink">#OpenCV</span>
-                                <span class="tech-tag blue">#Python</span>
-                                <span class="tech-tag cyan">#HaarCascades</span>
+                                <span class="tech-tag purple">#HaarCascades</span>
+                                <span class="tech-tag gold">#NumPy</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 8: Churn Prediction (Vision & Applied ML) -->
-                <div class="col-lg-4 col-md-6 project-item" data-category="vision-ml">
+                <!-- Project 8: Churn Prediction (Applied ML) -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="applied-ml">
                     <div class="project-card-modern fade-in-section">
                         <div class="project-thumb">
                             <img src="images/churn_prediction/churn_prediction.jpg" alt="Customer Churn Prediction">
@@ -839,23 +853,24 @@
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Churn Prediction</h3>
-                            <span class="project-category">Data Analytics & ML</span>
-                            <p class="project-desc">
-                                ETL pipeline with SQL Server & Power BI dashboard. Trained Random Forest model (84%
-                                accuracy) to predict churn.
-                            </p>
+                            <span class="project-category">Applied ML &amp; Analytics</span>
+                            <ul class="project-points-list">
+                                <li>Run raw customer transaction logs through the automated SQL ETL data pipeline.</li>
+                                <li>View interactive Power BI dashboards highlighting high-risk churn accounts alongside key retention drivers.</li>
+                            </ul>
                             <div class="tech-stack-tags">
-                                <span class="tech-tag gold">#PowerBI</span>
-                                <span class="tech-tag blue">#SQL</span>
                                 <span class="tech-tag cyan">#Python</span>
+                                <span class="tech-tag blue">#SQL-Server</span>
                                 <span class="tech-tag purple">#Scikit-learn</span>
+                                <span class="tech-tag cyan">#Pandas</span>
+                                <span class="tech-tag gold">#PowerBI</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 9: House Price Prediction (Vision & Applied ML) -->
-                <div class="col-lg-4 col-md-6 project-item" data-category="vision-ml">
+                <!-- Project 9: House Price Prediction (Applied ML) -->
+                <div class="col-lg-4 col-md-6 project-item" data-category="applied-ml">
                     <div class="project-card-modern fade-in-section">
                         <div class="project-thumb">
                             <img src="images/house/price.jpg" alt="House Price Prediction">
@@ -868,16 +883,17 @@
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">House Prices</h3>
-                            <span class="project-category">Machine Learning</span>
-                            <p class="project-desc">
-                                Regression model achieving 0.88 R² score. Tuned XGBoost/Random Forest via GridSearchCV
-                                and saved with Joblib.
-                            </p>
+                            <span class="project-category">Applied Machine Learning</span>
+                            <ul class="project-points-list">
+                                <li>Enter property specifications including location, square footage, bedrooms, and amenities.</li>
+                                <li>Tuned XGBoost/Random Forest regression model estimates fair market valuations with 0.88 R² precision.</li>
+                            </ul>
                             <div class="tech-stack-tags">
+                                <span class="tech-tag cyan">#Python</span>
                                 <span class="tech-tag gold">#XGBoost</span>
                                 <span class="tech-tag purple">#Scikit-learn</span>
-                                <span class="tech-tag cyan">#Python</span>
-                                <span class="tech-tag blue">#GridSearch</span>
+                                <span class="tech-tag blue">#GridSearchCV</span>
+                                <span class="tech-tag cyan">#Pandas</span>
                             </div>
                         </div>
                     </div>

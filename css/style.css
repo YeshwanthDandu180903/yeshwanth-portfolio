@@ -1969,109 +1969,31 @@ a:hover {
 
 
 .project-card-modern {
-
-
-
     background: var(--card-gradient);
-
-
-
     border: 1px solid var(--card-border);
-
-
-
-    border-radius: 24px;
-
-
-
-    padding: 25px;
-
-
-
+    border-radius: 18px;
+    padding: 18px;
     transition: all 0.4s ease;
-
-
-
     height: 100%;
-
-
-
     display: flex;
-
-
-
     flex-direction: column;
-
-
-
     position: relative;
-
-
-
     overflow: hidden;
-
-
-
 }
-
-
-
-
-
-
 
 .project-card-modern:hover {
-
-
-
     transform: translateY(-8px);
-
-
-
     box-shadow: var(--shadow-hover);
-
-
-
     border-color: rgba(0, 242, 195, 0.3);
-
-
-
 }
 
-
-
-
-
-
-
 .project-thumb {
-
-
-
-    border-radius: 16px;
-
-
-
+    border-radius: 14px;
     overflow: hidden;
-
-
-
-    margin-bottom: 20px;
-
-
-
-    height: 220px;
-
-
-
+    margin-bottom: 12px;
+    height: 165px;
     position: relative;
-
-
-
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-
-
-
 }
 
 
@@ -2353,109 +2275,59 @@ a:hover {
 
 
 .project-category {
-
-
-
-    font-size: 0.85rem;
-
-
-
+    font-size: 0.72rem;
     color: var(--gold-accent);
-
-
-
-    /* Using gold for category as accent */
-
-
-
     text-transform: uppercase;
-
-
-
-    letter-spacing: 1.5px;
-
-
-
+    letter-spacing: 1px;
     font-weight: 600;
-
-
-
-    margin-bottom: 15px;
-
-
-
+    margin-bottom: 8px;
     display: inline-block;
-
-
-
 }
-
-
-
-
-
-
 
 .project-desc {
-
-
-
     color: var(--text-secondary);
-
-
-
-    font-size: 0.95rem;
-
-
-
-    line-height: 1.6;
-
-
-
-    margin-bottom: 20px;
-
-
-
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
     flex-grow: 1;
-
-
-
 }
 
+.project-points-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.35rem 0 0.85rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    flex-grow: 1;
+}
 
+.project-points-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.45rem;
+}
 
+.project-points-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+    color: var(--accent-color);
+    font-size: 1.15rem;
+}
 
-
-
+[data-theme='light'] .project-points-list li::before {
+    color: #00796b;
+}
 
 .tech-stack-tags {
-
-
-
     display: flex;
-
-
-
     flex-wrap: wrap;
-
-
-
-    gap: 12px;
-
-
-
+    gap: 8px;
     margin-top: auto;
-
-
-
-    padding-top: 15px;
-
-
-
+    padding-top: 10px;
     border-top: 1px solid var(--card-border);
-
-
-
 }
 
 
