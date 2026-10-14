@@ -449,52 +449,18 @@ a:hover {
 
 
 .nav-link {
-
-
-
     font-weight: 500;
-
-
-
     color: var(--text-secondary) !important;
-
-
-
     margin: 0 10px;
-
-
-
     position: relative;
-
-
-
+    transition: color 0.4s ease, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: inline-block;
 }
-
-
-
-
-
-
 
 .nav-link:hover,
-
-
-
 .nav-link.active {
-
-
-
     color: var(--accent-color) !important;
-
-
-
 }
-
-
-
-
-
-
 
 .nav-link:not(.btn)::after {
     content: '';
@@ -505,7 +471,7 @@ a:hover {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-color);
-    transition: width 0.3s ease;
+    transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1);
     border-radius: 2px;
 }
 

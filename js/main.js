@@ -76,7 +76,7 @@ class DataSymbol {
 
         // Check current theme
 
-        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const theme = document.documentElement.getAttribute('data-theme') || 'light';
 
         const isLight = theme === 'light';
 
@@ -529,44 +529,48 @@ const themeToggleBtns = document.querySelectorAll('#theme-toggle, #theme-toggle-
 
 const themeIcons = document.querySelectorAll('#theme-icon, #theme-icon-mobile');
 
-// Check for saved theme preference
-
-const savedTheme = localStorage.getItem('theme');
-
-if (savedTheme) {
-
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
-    updateThemeIcon(savedTheme);
-
+// Check for saved theme preference, defaulting to light mode
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+if (document.body) {
+    document.body.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'light') {
+        document.body.classList.remove('dark-theme');
+        document.body.classList.add('light-theme');
+    } else {
+        document.body.classList.remove('light-theme');
+        document.body.classList.add('dark-theme');
+    }
 }
+updateThemeIcon(savedTheme);
 
 themeToggleBtns.forEach(btn => {
-
     if (!btn) return;
 
     btn.addEventListener('click', () => {
-
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
         document.documentElement.setAttribute('data-theme', newTheme);
+        if (document.body) {
+            document.body.setAttribute('data-theme', newTheme);
+            if (newTheme === 'light') {
+                document.body.classList.remove('dark-theme');
+                document.body.classList.add('light-theme');
+            } else {
+                document.body.classList.remove('light-theme');
+                document.body.classList.add('dark-theme');
+            }
+        }
 
         localStorage.setItem('theme', newTheme);
-
         updateThemeIcon(newTheme);
 
         // Refresh animation colors immediately
-
         if (typeof dataStreams !== 'undefined') {
-
             dataStreams.forEach(stream => stream.updateText());
-
         }
-
     });
-
 });
 
 function updateThemeIcon(theme) {
@@ -790,41 +794,35 @@ function revealElements() {
 }
 
 // 5. Magnetic Cursor Effect
-
 function initMagneticCursor() {
-
     const magnets = document.querySelectorAll('.btn, .social-icon, .nav-link');
 
     magnets.forEach((magnet) => {
+        const isNav = magnet.classList.contains('nav-link');
+        const pullFactor = isNav ? 0.12 : 0.22;
 
         magnet.addEventListener('mousemove', function (e) {
-
             const position = magnet.getBoundingClientRect();
-
             const x = e.clientX - position.left - position.width / 2;
-
             const y = e.clientY - position.top - position.height / 2;
 
-            magnet.style.transform = 'translate(' + x * 0.3 + 'px, ' + y * 0.5 + 'px)';
-
-            magnet.style.transition = 'all 0s linear';
-
+            // Slow, smooth damped tracking instead of harsh 0s instant snap
+            magnet.style.transition = isNav 
+                ? 'transform 0.45s cubic-bezier(0.25, 1, 0.5, 1)' 
+                : 'transform 0.25s cubic-bezier(0.25, 1, 0.5, 1)';
+            magnet.style.transform = 'translate(' + (x * pullFactor) + 'px, ' + (y * pullFactor) + 'px)';
             magnet.classList.add('magnetic-active');
-
         });
 
         magnet.addEventListener('mouseleave', function (e) {
-
-            magnet.style.transition = 'all 0.2s cubic-bezier(0, 0, 0.2, 1)';
-
+            // Gentle, elegant ease back to original rest position
+            magnet.style.transition = isNav 
+                ? 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)' 
+                : 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
             magnet.style.transform = 'translate(0px, 0px)';
-
             magnet.classList.remove('magnetic-active');
-
         });
-
     });
-
 }
 
 // Initialize Magnetic Cursor

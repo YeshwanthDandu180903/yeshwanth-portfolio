@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yeshwanth Dandu | Data Scientist Portfolio - Machine Learning, AI, Deep Learning">
     <title>Yeshwanth Dandu | Data Scientist</title>
+
+    <!-- Immediate Theme Initialization (Default to light mode, prevent flash) -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=22">
     <link rel="stylesheet" href="css/chat.css?v=17">
 
     <!-- Vercel Web Analytics -->
@@ -37,7 +45,7 @@
     <script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 
-<body class="dark-theme">
+<body class="light-theme" data-theme="light">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
@@ -54,7 +62,7 @@
             <!-- Theme Toggle (visible on mobile) -->
             <button id="theme-toggle-mobile" class="btn btn-link nav-link p-0 ms-auto me-3 d-lg-none"
                 aria-label="Toggle theme">
-                <i class="fas fa-moon" id="theme-icon-mobile"></i>
+                <i class="fas fa-cloud-sun" id="theme-icon-mobile"></i>
             </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,7 +114,7 @@
                     </li>
                     <li class="nav-item ms-lg-3 d-none d-lg-flex align-items-center">
                         <button id="theme-toggle" class="btn btn-link nav-link p-0" aria-label="Toggle theme">
-                            <i class="fas fa-moon" id="theme-icon"></i>
+                            <i class="fas fa-cloud-sun" id="theme-icon"></i>
                         </button>
                     </li>
                 </ul>
@@ -1207,7 +1215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/config.js?v=14"></script>
-    <script src="js/main.js?v=14"></script>
+    <script src="js/main.js?v=16"></script>
     <script src="js/chat.js?v=14"></script>
 </body>
 
