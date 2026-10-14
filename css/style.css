@@ -5770,6 +5770,121 @@ html {
 }
 
 /* ========================================================
+   HERO HEADLINE & BOLD CTA TAGS (Hire Me & Get In Touch)
+   ======================================================== */
+.hero-headline-wrap {
+    margin-top: 0.75rem;
+    margin-bottom: 1.6rem !important;
+}
+
+.hero-headline-lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 0.75rem !important;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.hero-headline-tags {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    letter-spacing: 0.2px;
+    margin-bottom: 0 !important;
+}
+
+.hero-cta-btns {
+    margin-top: 1.5rem !important;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+/* Hire Me Button - Bold Vibrant Accent */
+.btn-hero-hire {
+    background: linear-gradient(135deg, #00897b 0%, #00695c 100%) !important;
+    color: #ffffff !important;
+    border: 2px solid #00897b !important;
+    padding: 0.52rem 1.45rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 16px rgba(0, 137, 123, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    letter-spacing: 0.3px;
+}
+
+.btn-hero-hire:hover {
+    background: linear-gradient(135deg, #00796b 0%, #004d40 100%) !important;
+    border-color: #004d40 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 137, 123, 0.5) !important;
+}
+
+/* Get In Touch Button - Bold Distinct Contrast */
+.btn-hero-touch {
+    background: #ffffff !important;
+    color: #00796b !important;
+    border: 2px solid #00897b !important;
+    padding: 0.52rem 1.45rem !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 137, 123, 0.15) !important;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    letter-spacing: 0.3px;
+}
+
+.btn-hero-touch:hover {
+    background: #00897b !important;
+    color: #ffffff !important;
+    border-color: #00897b !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 137, 123, 0.35) !important;
+}
+
+/* Dark Theme Adaptation */
+[data-theme='dark'] .btn-hero-hire,
+body:not([data-theme='light']) .btn-hero-hire {
+    background: linear-gradient(135deg, #00f2c3 0%, #00cba0 100%) !important;
+    color: #061524 !important;
+    border-color: #00f2c3 !important;
+    box-shadow: 0 4px 20px rgba(0, 242, 195, 0.45) !important;
+}
+
+[data-theme='dark'] .btn-hero-hire:hover,
+body:not([data-theme='light']) .btn-hero-hire:hover {
+    background: linear-gradient(135deg, #00dbb0 0%, #00b38c 100%) !important;
+    border-color: #00dbb0 !important;
+    color: #061524 !important;
+    box-shadow: 0 8px 28px rgba(0, 242, 195, 0.6) !important;
+}
+
+[data-theme='dark'] .btn-hero-touch,
+body:not([data-theme='light']) .btn-hero-touch {
+    background: rgba(0, 242, 195, 0.08) !important;
+    color: #00f2c3 !important;
+    border: 2px solid #00f2c3 !important;
+    box-shadow: 0 4px 16px rgba(0, 242, 195, 0.2) !important;
+}
+
+[data-theme='dark'] .btn-hero-touch:hover,
+body:not([data-theme='light']) .btn-hero-touch:hover {
+    background: #00f2c3 !important;
+    color: #061524 !important;
+    border-color: #00f2c3 !important;
+    box-shadow: 0 8px 28px rgba(0, 242, 195, 0.5) !important;
+}
+
+/* ========================================================
    LET'S CONNECT REDESIGN - MODERN DATA SCIENCE AESTHETICS
    ======================================================== */
 
